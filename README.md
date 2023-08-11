@@ -1,108 +1,442 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Eire Settlers
+(Developer: Valentino Braga)
 
-Welcome USER_NAME,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Project description.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Mockup image]()
 
-## Gitpod Reminders
+[Live Website]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Table of Contents
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+# User Experience (UX)
 
-Another blue button should appear to click: _Open Browser_.
+## Business Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User Goals
+- 
+- 
+- 
+- 
+- 
+- 
 
-A blue button should appear to click: _Make Public_,
+### Website Owner Goals
+- 
+-
+-
+-
+-
+-
 
-Another blue button should appear to click: _Open Browser_.
+### Target Audience
+- 
+-
+-
+-
+-
+-
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### User Expectations
+- 
+- 
+-
+-
+-
+-
 
-To log into the Heroku toolbelt CLI:
+## User Stories
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### First-Time User
+1. As a first-time user, I want to 
+2. As a first-time user, I want to 
+3. As a first-time user, I want to 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Returning User
+1. As a returning user, I want to 
+2. As a returning user, I want to 
+3. As a returning user, I want to 
 
-------
+### Site Owner
+1. As a site owner, I want 
+2. As a site owner, I want 
+3. As a site owner, I want 
 
-## Release History
+# Design
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Design's description.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Wireframes
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Wireframe's description.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<details>
+<summary>?????</summary>
+<br>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![?????]()
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+</details>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<details>
+<summary>?????</summary>
+<br>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![?????]()
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+</details>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<details>
+<summary>?????</summary>
+<br>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![?????]()
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+</details>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<details>
+<summary>?????</summary>
+<br>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![?????]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+</details>
 
-------
+<details>
+<summary>?????</summary>
+<br>
 
-## FAQ about the uptime script
+![?????]()
 
-**Why have you added this script?**
+</details>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## Typography
 
-**How will this affect me?**
+Typography's description.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Image name](Image link)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Colour Palette
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+Colour's palette description.
 
-**So….?**
+![Image name](Image link)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Imagery
 
-**Can I opt out?**
+Imagery's description.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![Image name](Image link)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Structure 
 
-**Anything more?**
+Structure's description.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+-
+-
+-
+-
+-
+-
 
----
+# Features
 
-Happy coding!
+Feature's description.
+
+### Main Page
+-
+-
+-
+-
+<details>
+<summary>Main Page</summary>
+<br>
+
+![Main Page](Main Page Image)
+
+</details>
+<details>
+<summary>Functionality</summary>
+<br>
+
+![Functionality]()
+
+</details>
+
+# Future Features
+
+A few features that could make the website even better are listed here:
+
+1. 
+
+2. 
+
+3. 
+
+4. 
+
+# Technologies Used
+
+### Languages and Frameworks
+The following languages and frameworks were used to develop the website:
+- HTML
+- CSS
+- JavaScript
+- Python
+- Bootstrap
+- Django
+
+### Resources and Tools
+The following resources and tools were used to develop the website:
+- Git
+- Figma
+- Github
+- Gitpod
+- Favicon
+- DevTools
+- W3 Schools
+- Codecademy
+- Google Fonts
+- Font Awesome
+- Stack Overflow
+- Tables Generator
+- CI Python Linter
+- JSHint Validation
+- Adobe Photoshop 2023
+- Techsini Mockup Generator
+- GitHub Wiki TOC generator
+- W3C CSS Validation Service
+- W3C Markup Validation Service
+- WAVE Web Accessibility Evaluation Tools
+
+# Testing Cases
+
+### User Stories
+
+Add table.
+
+### Functionalities Validation
+
+Thorough testing of this quiz has been undertaken to ensure that all of the buttons and functionality of the quiz work exactly as they have been intended to.
+
+- Landing Page
+
+- Register Page
+
+- Login Page
+
+- Forums Options Page
+
+- Forum Posts Page
+
+- Post Page
+
+- Profile Page
+
+- Bookmarks Page
+
+<details>
+<summary>Validation</summary>
+<br>
+
+![Validation](Validation Image)
+
+</details>
+
+# HTML Validation
+
+The Nu HTML Checker (W3C) is used to validate HTML documents. The files passed without any errors.
+
+<details>
+<summary>index HTML Validation</summary>
+<br>
+
+![index HTML Validation]()
+
+</details>
+
+<details>
+<summary>404 Error HTML Validation</summary>
+<br>
+
+![404 Error HTML Validation]()
+
+</details>
+
+# CSS Validation
+
+The W3C Jigsaw CSS Validation Service is used to validate CSS documents. The file passed without any errors.
+
+<details>
+<summary>CSS Validation</summary>
+<br>
+
+![CSS Validation]()
+
+</details>
+
+# JS Validation
+
+The JSHint is used to validate JavaScript documents. The files passed without any errors.
+
+<details>
+<summary>JS Validation</summary>
+<br>
+
+![JS Validation]()
+
+</details>
+
+# Python Validation
+
+The project was validated using the provided CI Python Linter and it was cleared with no errors.
+
+<details>
+<summary>Python Validation</summary>
+<br>
+
+![Python Validation]()
+
+</details>
+
+### Lighthouse
+
+Lighthouse testing was carried out to test the performance, accessibility, best practices and SEO of the quiz.
+
+<details>
+<summary>index HTML Lighthouse</summary>
+<br>
+
+![index HTML Lighthouse]()
+
+</details>
+
+<details>
+<summary>404 Error HTML Validation</summary>
+<br>
+
+![404 Error HTML Lighthouse]()
+
+</details>
+
+### Accessibility
+
+The WAVE web accessibility evaluation tool by WebAIM was used to ensure the webpages met accessibility standards.
+
+<details>
+<summary>index HTML WAVE</summary>
+<br>
+
+![index HTML WAVE]()
+
+</details>
+
+<details>
+<summary>404 Error HTML Validation</summary>
+<br>
+
+![404 Error HTML WAVE]()
+
+</details>
+
+Responsive test on multiple devices.
+The following devices were used to ensure the site was responsive:
+
+- Ipad Pro
+- Galaxy S20
+- Macbook Pro
+- Iphone 13 Pro
+- Iphone 14 Pro Max
+- Notebook Acer Predator Helios 300
+
+# Bugs
+
+Bug: Add bug.
+<br>
+Fix: Add fix.
+
+Bug: Add bug.
+<br>
+Fix: Add fix.
+
+Bug: Add bug.
+<br>
+Fix: Add fix.
+
+Bug: Add bug.
+<br>
+Fix: Add fix.
+
+Bug: Add bug.
+<br>
+Fix: Add fix.
+
+Bug: Add bug.
+<br>
+Fix: Add fix.
+
+# Deployment
+
+[Click Here To See The Live Website]()
+
+### Deploy
+The website was deployed through the use of GitHub Pages, a feature built in to GitHub. This can be done by following the steps below.
+1. In the desired repository, click on "Settings" from the top menu.
+2. From the side menu to your left, select "Pages" in the "Code and automation" section.
+3. Make sure the "Source" option is set to "Deploy from a branch"
+4. Select the desired "Branch" from the drop down below (main branch in most cases, making sure the director is set to /(root)).
+5. Select "Save", and after it refreshes the page, you will see a box at the top of the page providing you with the URL of your now published site.
+
+To contribute or check the code yourself, you can fork or clone the repository as well.
+
+### Fork
+1. Go to the desired repository
+2. Click "Fork" in the upper right corner
+3. Select the owner, and set the repository name. A description can be added if desired
+4. Choose whether to copy the default branch, or all branches
+5. Click "Create Form"
+
+### Clone
+
+1. Go to the desired repository
+2. Click the "Code" button at the top of the files section of the page
+3. Select your desired method for cloning (HTTPS/SSH/GitHub CLI)
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory
+6. Type "git clone", and then paste the URL you copied earlier. It will look like this, with your GitHub username instead of "YOUR-USERNAME": "$ git clone https://github.com/YOUR-USERNAME/DESIRED-REPOSITORY"
+7. Press Enter. Your local clone will be created.
+
+### Heroku
+
+1. Create a user account with Heroku.
+2. Click New in the top-right corner of your Heroku Dashboard.
+3. Click on the dropdown menu and select create new.
+4. The app name is unique to all apps within Heroku so select one that is not currently in use.
+5. Select a region, EU or USA.
+6. Click Create App.
+7. In the app settings click Reveal Config vars, set the value of KEY to PORT, and the value to 8000 and click add.
+8. Click Add Buildpack.
+9. Choose Python first and click add.
+10. Choose Node.js second.
+11. The order is important, Python needs to be first, then Node.js second.
+12. Click on the Deploy tab, select connect to Github and search for your repository.
+13. Click on Enable automatic deploy or Deploy branch depending on your use case.
+
+# Credits
+
+A list of references and tutorials used for the site:
+
+* [Tutorial Name](Tutorial link)
+* GitHub Repositories
+* Hello Django Project
+* I Think Therefore I Blog
+* Boutique Ado Project
+
+# Acknowledgements
+
+I would like to take this opportunity to acknowledge and thank the following people:
+
+- A big thank you for everybody on Code Institute's Slack Channels.
+- Jason, tutor from Code Institue. Thank you for the help.
