@@ -1,0 +1,1 @@
+web: gunicorn eire_settlers.wsgi
