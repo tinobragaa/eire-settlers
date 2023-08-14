@@ -40,7 +40,7 @@ class Comment(models.Model):
     Model class for a Comments on Resouces
     """
     article = models.ForeignKey(
-        Resource, on_delete=models.CASCADE, related_name="comments")
+        Articles, on_delete=models.CASCADE, related_name="comments")
     member = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="new_comment")
     body = models.TextField()
