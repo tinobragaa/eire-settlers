@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-TATUS = ((0, "Draft"), (1, "Published"))
+STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Articles(models.Model):
@@ -42,7 +42,7 @@ class Comment(models.Model):
     article = models.ForeignKey(
         Resource, on_delete=models.CASCADE, related_name="comments")
     member = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="comments_")
+        User, on_delete=models.CASCADE, related_name="new_comment")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
