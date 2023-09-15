@@ -440,3 +440,4 @@ I would like to take this opportunity to acknowledge and thank the following peo
 
 - A big thank you for everybody on Code Institute's Slack Channels.
 - Jason, tutor from Code Institue. Thank you for the help.
+- A huge thank you to my team, GreenerToday, from September's hackathon, for inspiring me.
