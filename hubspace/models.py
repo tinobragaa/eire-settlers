@@ -7,9 +7,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Articles(models.Model):
     """
-    Model class for the artciles added to the groups.
+    Model class for the articles added to the groups.
     Includes fields for title, member, image, excerpt, content,
-    posted date, updated date, status,
+    posted date, updated date and status.
     """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -37,7 +37,7 @@ class Articles(models.Model):
 
 class Comment(models.Model):
     """
-    Model class for a Comments on Resouces
+    Model class for comments made on articles.
     """
     article = models.ForeignKey(
         Articles, on_delete=models.CASCADE, related_name="comments")
