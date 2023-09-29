@@ -14,7 +14,8 @@ class Articles(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     member = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="articles_added")
+        User, on_delete=models.CASCADE, related_name="hub_articles")
+    excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     image_preview = CloudinaryField("image", default="placeholder")
