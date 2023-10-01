@@ -30,23 +30,6 @@
                 <div class="row">
                     <div class="col-1">
                         <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' articles.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if endorsed %}
-                                <button type="submit" name="blogpost_id" value="{{articles.slug}}" class="btn-like">
-                                    <i class="fa-solid fa-circle-check"></i>
-                                </button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{articles.slug}}" class="btn-like">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                </button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="fa-regular fa-circle-check"></i></span>
-                            {% endif %}
-                            <!-- The number of likes goes before the closing strong tag -->
                             <span class="text-secondary">{{ articles.endorsement_amount }}</span>
                         </strong>
                     </div>
