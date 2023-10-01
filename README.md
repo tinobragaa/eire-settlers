@@ -353,9 +353,9 @@ The following devices were used to ensure the site was responsive:
 
 # Bugs
 
-Bug: Add bug.
+Bug: Unable to deploy due to error "ERROR: Could not build wheels for backports.zoneinfo, which is required to install pyproject.toml-based projects".
 <br>
-Fix: Add fix.
+Fix: Update requirements.txt file from "backports.zoneinfo==0.2.1" to "backports.zoneinfo;python_version<"3.9"". Source: [stackoverflow](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta).
 
 Bug: Add bug.
 <br>
