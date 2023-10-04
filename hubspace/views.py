@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Articles
+from .forms import CommentForm
 
 
 class ArticlesList(generic.ListView):
@@ -27,6 +28,39 @@ class ArticleDetail(View):
             {
                 "articles": articles,
                 "comments": comments,
-                "endorsed": endorsed
+                "commented": False,
+                "endorsed": endorsed,
+                "comment_form": CommentForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Articles.objects.filter(status=1)
+        articles = get_object_or_404(queryset, slug=slug)
+        comments = (
+            articles.comments.filter(approved=True).order_by("-created_on"))
+        endorsed = False
+        if articles.endorsement.filter(id=self.request.user.id).exists():
+            endorsed = True
+
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.article = articles
+            comment.member = request.user
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            "article_detail.html",
+            {
+                "articles": articles,
+                "comments": comments,
+                "commented": True,
+                "endorsed": endorsed,
+                "comment_form": CommentForm()
             },
         )
