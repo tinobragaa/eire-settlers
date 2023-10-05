@@ -73,42 +73,50 @@ Design's description.
 Wireframe's description.
 
 <details>
-<summary>?????</summary>
+<summary>Landing Page</summary>
 <br>
 
-![?????]()
+![Landing Page](docs/wireframes/landing-v1.jpg)
 
 </details>
 
 <details>
-<summary>?????</summary>
+<summary>Sign In</summary>
 <br>
 
-![?????]()
+![Sign In](docs/wireframes/sign-in-v1.jpg)
 
 </details>
 
 <details>
-<summary>?????</summary>
+<summary>Sign Up</summary>
 <br>
 
-![?????]()
+![Sign Up](docs/wireframes/sign-up-v1.jpg)
 
 </details>
 
 <details>
-<summary>?????</summary>
+<summary>Groups</summary>
 <br>
 
-![?????]()
+![Groups](docs/wireframes/groups-v1.jpg)
 
 </details>
 
 <details>
-<summary>?????</summary>
+<summary>Articles Interface</summary>
 <br>
 
-![?????]()
+![Articles Interface](docs/wireframes/articles-v1.jpg)
+
+</details>
+
+<details>
+<summary>Articles Details</summary>
+<br>
+
+![Articles Details](docs/wireframes/article-details-v1.jpg)
 
 </details>
 
@@ -379,7 +387,7 @@ Fix: Add fix.
 
 # Deployment
 
-[Click Here To See The Live Website]()
+[Click Here To See The Live Website](https://eire-settlers-9b0e3e0c192c.herokuapp.com/)
 
 ### Deploy
 The website was deployed through the use of GitHub Pages, a feature built in to GitHub. This can be done by following the steps below.
