@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
 
@@ -96,6 +97,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'eire_settlers.wsgi.application'
 
+MESSAGE_TAGS = {
+    messages.DEBUG: 'text-bg-info',
+    messages.INFO: 'text-bg-dark',
+    messages.SUCCESS: 'text-bg-success',
+    messages.WARNING: 'text-bg-warning',
+    messages.ERROR: 'text-bg-danger',
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -141,7 +149,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
