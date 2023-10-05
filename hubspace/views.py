@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Articles
 from .forms import CommentForm
 
@@ -64,3 +65,16 @@ class ArticleDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+
+class ArticlesEndorsement(View):
+
+    def post(self, request, slug):
+        articles = get_object_or_404(Articles, slug=slug)
+
+        if articles.endorsement.filter(id=request.user.id).exists():
+            articles.endorsement.remove(request.user)
+        else:
+            articles.endorsement.add(request.user)
+
+        return HttpResponseRedirect(reverse('article_detail', args=[slug]))

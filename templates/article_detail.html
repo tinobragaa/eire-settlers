@@ -32,11 +32,27 @@
                 <div class="row">
                     <div class="col-1">
                         <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'articles_endorsement' articles.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if endorsed %}
+                                <button type="submit" name="button-endorsement" value="{{articles.slug}}"class="btn">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </button>
+                                {% else %}
+                                <button type="submit" name="button-endorsement" value="{{articles.slug}}"class="btn">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                </button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span><i class="fa-regular fa-circle-check"></i></span>
+                            {% endif %}
                             <span class="text-secondary">{{ articles.endorsement_amount }}</span>
                         </strong>
                     </div>
                     <div class="col-1">
-                        {% with comment.count as total_comments %}
+                        {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}
                         </strong>
