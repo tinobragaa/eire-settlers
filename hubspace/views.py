@@ -20,8 +20,11 @@ class ArticleDetail(View):
         comments = (
             articles.comments.filter(approved=True).order_by("-created_on"))
         endorsed = False
+        saved = False
         if articles.endorsement.filter(id=self.request.user.id).exists():
             endorsed = True
+        if articles.saved_items.filter(id=self.request.user.id).exists():
+            saved = True
 
         return render(
             request,
@@ -31,6 +34,7 @@ class ArticleDetail(View):
                 "comments": comments,
                 "commented": False,
                 "endorsed": endorsed,
+                "saved": saved,
                 "comment_form": CommentForm()
             },
         )
@@ -41,8 +45,11 @@ class ArticleDetail(View):
         comments = (
             articles.comments.filter(approved=True).order_by("-created_on"))
         endorsed = False
+        saved = False
         if articles.endorsement.filter(id=self.request.user.id).exists():
             endorsed = True
+        if articles.saved_items.filter(id=self.request.user.id).exists():
+            saved = True
 
         comment_form = CommentForm(data=request.POST)
 
@@ -62,6 +69,7 @@ class ArticleDetail(View):
                 "comments": comments,
                 "commented": True,
                 "endorsed": endorsed,
+                "saved": saved,
                 "comment_form": CommentForm()
             },
         )
@@ -76,5 +84,18 @@ class ArticlesEndorsement(View):
             articles.endorsement.remove(request.user)
         else:
             articles.endorsement.add(request.user)
+
+        return HttpResponseRedirect(reverse('article_detail', args=[slug]))
+
+
+class SavedArticle(View):
+
+    def post(self, request, slug):
+        articles = get_object_or_404(Articles, slug=slug)
+
+        if articles.saved_items.filter(id=request.user.id).exists():
+            articles.saved_items.remove(request.user)
+        else:
+            articles.saved_items.add(request.user)
 
         return HttpResponseRedirect(reverse('article_detail', args=[slug]))
