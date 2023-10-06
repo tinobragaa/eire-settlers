@@ -36,11 +36,11 @@
                             <form class="d-inline" action="{% url 'articles_endorsement' articles.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if endorsed %}
-                                <button type="submit" name="button-endorsement" value="{{articles.slug}}"class="btn">
+                                <button type="submit" name="button-endorsement" value="{{articles.slug}}" class="btn">
                                     <i class="fa-solid fa-circle-check"></i>
                                 </button>
                                 {% else %}
-                                <button type="submit" name="button-endorsement" value="{{articles.slug}}"class="btn">
+                                <button type="submit" name="button-endorsement" value="{{articles.slug}}" class="btn">
                                     <i class="fa-regular fa-circle-check"></i>
                                 </button>
                                 {% endif %}
@@ -51,6 +51,25 @@
                             <span class="text-secondary">{{ articles.endorsement_amount }}</span>
                         </strong>
                     </div>
+
+                    
+                    <div class="col-1">
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'saved_article' articles.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if saved %}
+                            <button type="submit" name="button-saved" value="{{articles.slug}}" class="btn">
+                                <i class="fa-solid fa-bookmark"></i>
+                            </button>
+                            {% else %}
+                            <button type="submit" name="button-saved" value="{{articles.slug}}" class="btn">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            {% endif %}
+                        </form>
+                        {% else %}
+                        <i class="fa-regular fa-bookmark"></i>
+                        {% endif %}
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
