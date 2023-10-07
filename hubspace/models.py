@@ -1,6 +1,10 @@
 from django.db import models
+
 from django.contrib.auth.models import User
+
 from cloudinary.models import CloudinaryField
+
+from django_resized import ResizedImageField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -14,7 +18,10 @@ class Articles(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     member = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="hub_articles")
+        User,
+        on_delete=models.CASCADE,
+        related_name="hub_articles"
+        )
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -53,3 +60,60 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class Profile(models.Model):
+    """
+    Model class for user profiles.
+    """
+    PRONOUN_CHOICES = [
+        ('Unspecified', 'None'),
+        ('He', 'He/Him'),
+        ('She', 'She/Her'),
+        ('They', 'They/Them'),
+    ]
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    pronouns = models.CharField(
+        max_length=15,
+        choices=PRONOUN_CHOICES,
+        default='Unspecified'
+        )
+    image = ResizedImageField(
+        size=[300, 300],
+        quality=75,
+        upload_to="static/images/users",
+        force_format='WEBP',
+        null=True,
+        blank=True
+        )
+    location = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True
+        )
+    nationality = models.CharField(
+        max_length=40,
+        null=True,
+        blank=True,
+        default='Unspecified'
+        )
+    about = models.TextField(
+        max_length=2000,
+        null=True,
+        blank=True
+        )
+
+    def __str__(self):
+        return str(self.user.username)
+
+    @property
+    def user_image_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+        else:
+            return '/static/images/users/default-profile.webp'
+
+    class Meta:
+        ordering = ['-created']
