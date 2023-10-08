@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Articles
+from .models import Articles, Profile
 from .forms import CommentForm
+from django.contrib.auth.models import User
 
 
 class ArticlesList(generic.ListView):
@@ -99,3 +100,31 @@ class SavedArticle(View):
             articles.saved_items.add(request.user)
 
         return HttpResponseRedirect(reverse('article_detail', args=[slug]))
+
+
+class MemberProfile(View):
+    """
+    View for profile page.
+    """
+    def get(self, request, *arg, **kwargs):
+        if "user" in self.kwargs:
+            member_info = get_object_or_404(
+                User, username=self.kwargs["user"])
+            profile_detail = get_object_or_404(
+                Profile, user=member_info.id)
+        else:
+            member_info = get_object_or_404(
+                User, username=request.user.username)
+            profile_detail = get_object_or_404(
+                Profile, user=request.user.id)
+
+        context = {
+            "user": member_info,
+            "pronouns": profile_detail.pronouns,
+            "image": profile_detail.image,
+            "location": profile_detail.location,
+            "nationality": profile_detail.nationality,
+            "about": profile_detail.about
+            }
+
+        return render(request, "member_profile.html", context)

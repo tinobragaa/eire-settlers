@@ -16,7 +16,7 @@
 
         <!-- CSS File -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-        <title>EireSettlers</title>
+        <title>{% block title %}Eire Settlers{% endblock title %}</title>
     </head>
     <body>
         <!-- Navigation -->
@@ -33,7 +33,7 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
+                            <a class="nav-link" href="{% url 'member_profile' %}">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

@@ -6,6 +6,9 @@ from cloudinary.models import CloudinaryField
 
 from django_resized import ResizedImageField
 
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -68,9 +71,9 @@ class Profile(models.Model):
     """
     PRONOUN_CHOICES = [
         ('Unspecified', 'None'),
-        ('He', 'He/Him'),
-        ('She', 'She/Her'),
-        ('They', 'They/Them'),
+        ('He/Him', 'He/Him'),
+        ('She/Her', 'She/Her'),
+        ('They/Them', 'They/Them'),
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -107,6 +110,15 @@ class Profile(models.Model):
 
     def __str__(self):
         return str(self.user.username)
+
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
 
     @property
     def user_image_url(self):
