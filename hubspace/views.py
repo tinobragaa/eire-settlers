@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Articles, Profile
-from .forms import CommentForm
+from .forms import CommentForm, ProfileForm
 from django.contrib.auth.models import User
 
 
@@ -104,7 +106,7 @@ class SavedArticle(View):
 
 class MemberProfile(View):
     """
-    View for profile page.
+    View to display the profile page.
     """
     def get(self, request, *arg, **kwargs):
         if "user" in self.kwargs:
@@ -120,6 +122,9 @@ class MemberProfile(View):
 
         context = {
             "user": member_info,
+            "first_name": profile_detail.first_name,
+            "last_name": profile_detail.last_name,
+            "profile": profile_detail,
             "pronouns": profile_detail.pronouns,
             "image": profile_detail.image,
             "location": profile_detail.location,
@@ -128,3 +133,23 @@ class MemberProfile(View):
             }
 
         return render(request, "member_profile.html", context)
+
+
+@login_required(login_url='/login')
+def update_profile(request):
+    """
+    View that will update the user profile.
+    """
+    profile = request.user.profile
+    form = ProfileForm(instance=profile)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.instance.user = request.user
+            form.save()
+            messages.success(request, 'Profile updated successfully!')
+            return redirect('member_profile')
+
+    context = {'form': form}
+    return render(request, "profile_form.html", context)
