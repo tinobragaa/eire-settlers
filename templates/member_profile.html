@@ -1,18 +1,14 @@
 {% extends 'base.html' %}
-
 {% block title %}
 {{ user.username }} | Eire Settlers
 {% endblock %}
 
-{% block h1 %}
-{{ user.username }}
-{% endblock %}
-
 {% block content %}
+
 <div class="card big-card mt-3">
     <div class="card-body">
         <div class="d-flex flex-column align-items-center text-center">
-            <img src="{{ profile.user_image_url }}" alt="Profile image" class="card-img-top rounded-2 img-thumbnail img-small">
+            <img src="{{ user.profile.user_image_url }}" alt="Profile image" class="card-img-top img-thumbnail img-small" id="profile-image">
             <div class="mt-3">
                 <p class="yellow mb-2"><i class="fa-regular fa-circle-user"></i> {{ user.username }}</p>
                 <p class="m-1">{{ user.profile.location }}</p>
