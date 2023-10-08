@@ -32,6 +32,9 @@ class ProfileForm(forms.ModelForm):
             "about": "About",
             "image": "Profile Picture",
         }
+    
+    first_name = forms.CharField(required=False)
+    last_name = forms.CharField(required=False)
 
     def save(self, commit=True):
         user = self.instance.user
