@@ -153,7 +153,7 @@ def update_profile(request):
             return redirect('member_profile')
 
     context = {'form': form}
-    return render(request, "profile_form.html", context)
+    return render(request, "edit_profile.html", context)
 
 
 @login_required(login_url='/login')
