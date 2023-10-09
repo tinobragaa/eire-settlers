@@ -16,7 +16,7 @@
                 {% if user.is_authenticated and user == profile.user %}
                 <div class="row d-grid gap-2 d-flex justify-content-center flex-nowrap">
                     <a role="button" class="btn btn-sm btn-outline-dark col-5 me-1 me-lg-3 text-nowrap" href="{% url 'update_profile' %}"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
-                    <a role="button" class="btn btn-sm btn-outline-danger col-6  text-nowrap" href="#"><i class="fa-solid fa-trash-can"></i> Delete</a>
+                    <a role="button" class="btn btn-sm btn-outline-danger col-6  text-nowrap" href="{% url 'delete_profile' %}"><i class="fa-solid fa-trash-can"></i> Delete</a>
                 </div>
                 {% endif %}
             </div>

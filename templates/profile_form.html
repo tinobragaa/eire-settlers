@@ -6,7 +6,7 @@
     <div class="col-md-6 card m-4 gray">
         <div class="card-body">
             <div class="row">
-                <h1>EDIT PROFILE</h1>
+                <h1>Edit Profile</h1>
             </div>
             <div class="row-col-1 d-flex justify-content-center">
                 <a type="button" class="btn btn-outline-dark" href="{% url 'member_profile' %}">Return</a>
@@ -16,14 +16,13 @@
                     {% csrf_token %}
                     
                     {% for field in form %}
-                    
                         <div class="form-outline mt-3">
                             <label class="col-sm-2 col-form-label text-nowrap" for="">{{ field.label }}</label>
                             {{field}}
                         </div>
                     {% endfor %}
                     {% if request.resolver_match.url_name == 'update_profile' %}
-                    <button type="submit" class="btn auth-btn mt-4 mb-4 hover">UPDATE</button>
+                    <button type="submit" class="btn auth-btn mt-4 mb-4 hover">Save</button>
                     {% endif %}
                 </form>
             </div>
