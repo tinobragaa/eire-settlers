@@ -5,6 +5,11 @@ urlpatterns = [
     path('', views.ArticlesList.as_view(), name='home'),
     path('profile/', views.MemberProfile.as_view(), name="member_profile"),
     path('update_profile/', views.update_profile, name='update_profile'),
+    path(
+        'delete_profile/',
+        views.delete_profile,
+        name="delete_profile"
+        ),
     path('<slug:slug>/', views.ArticleDetail.as_view(), name='article_detail'),
     path(
         'endorse/<slug:slug>',
@@ -17,4 +22,3 @@ urlpatterns = [
         name="saved_article"
         ),
 ]
-
