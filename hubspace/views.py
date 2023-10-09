@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth import logout
 from .models import Articles, Profile
 from .forms import CommentForm, ProfileForm
 from django.contrib.auth.models import User
@@ -153,3 +154,18 @@ def update_profile(request):
 
     context = {'form': form}
     return render(request, "profile_form.html", context)
+
+
+@login_required(login_url='/login')
+def delete_profile(request):
+    """
+    View that will delete the user profile.
+    """
+    if request.method == "POST":
+        user = request.user
+        user.delete()
+        logout(request)
+        messages.warning(request, 'Profile was deleted!')
+        return redirect('/')
+
+    return render(request, "delete_profile.html")
