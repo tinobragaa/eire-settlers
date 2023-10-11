@@ -4,12 +4,15 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import logout
-from .models import Articles, Profile
+from .models import Articles, Profile, Comment
 from .forms import CommentForm, ProfileForm
 from django.contrib.auth.models import User
 
 
 class ArticlesList(generic.ListView):
+    """
+    View that displays all articles on the landing page.
+    """
     model = Articles
     queryset = Articles.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -17,7 +20,9 @@ class ArticlesList(generic.ListView):
 
 
 class ArticleDetail(View):
-
+    """
+    View that displays the article details.
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Articles.objects.filter(status=1)
         articles = get_object_or_404(queryset, slug=slug)
@@ -80,7 +85,9 @@ class ArticleDetail(View):
 
 
 class ArticlesEndorsement(View):
-
+    """
+    View that enables the post to be liked by members.
+    """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
 
@@ -93,7 +100,9 @@ class ArticlesEndorsement(View):
 
 
 class SavedArticle(View):
-
+    """
+    View that enables the post to be saved by members.
+    """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
 
@@ -136,7 +145,7 @@ class MemberProfile(View):
         return render(request, "member_profile.html", context)
 
 
-@login_required(login_url='/login')
+@login_required(login_url='/accounts/login/')
 def update_profile(request):
     """
     View that will update the user profile.
@@ -156,7 +165,7 @@ def update_profile(request):
     return render(request, "edit_profile.html", context)
 
 
-@login_required(login_url='/login')
+@login_required(login_url='/accounts/login/')
 def delete_profile(request):
     """
     View that will delete the user profile.
@@ -169,3 +178,19 @@ def delete_profile(request):
         return redirect('/')
 
     return render(request, "delete_profile.html")
+
+
+@login_required(login_url='/accounts/login/')
+def delete_comment(request, comment_id):
+    """
+    View that allow users to delete their comments.
+    """
+    if request.method == "POST":
+        comment = get_object_or_404(Comment, id=comment_id)
+        comment.delete()
+        messages.success(request, 'The comment was deleted successfully!')
+        return HttpResponseRedirect(reverse(
+            'article_detail', args=[comment.article.slug]))
+
+    return render(request, "delete_comment.html")
+

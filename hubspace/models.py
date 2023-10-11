@@ -1,11 +1,7 @@
 from django.db import models
-
 from django.contrib.auth.models import User
-
 from cloudinary.models import CloudinaryField
-
 from django_resized import ResizedImageField
-
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
@@ -78,8 +74,16 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
-    first_name = models.CharField(max_length=20, null=True, blank=True, default='Your')
-    last_name = models.CharField(max_length=20, null=True, blank=True, default='Name')
+    first_name = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True,
+        )
+    last_name = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True,
+        )
     pronouns = models.CharField(
         max_length=15,
         choices=PRONOUN_CHOICES,
