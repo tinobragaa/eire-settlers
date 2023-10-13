@@ -181,6 +181,25 @@ def delete_profile(request):
 
 
 @login_required(login_url='/accounts/login/')
+def edit_comment(request, comment_id):
+    """
+    View that allow to edit a comment.
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES, instance=comment)
+        if form.is_valid():
+            form.instance.user = request.user
+            form.save()
+            messages.success(request, 'The comment was edited successfully!')
+            return HttpResponseRedirect(reverse(
+                'article_detail', args=[comment.article.slug]))
+
+    return render(request, "edit_comment.html")
+
+
+@login_required(login_url='/accounts/login/')
 def delete_comment(request, comment_id):
     """
     View that allow users to delete their comments.
@@ -193,4 +212,3 @@ def delete_comment(request, comment_id):
             'article_detail', args=[comment.article.slug]))
 
     return render(request, "delete_comment.html")
-

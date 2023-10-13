@@ -14,7 +14,6 @@
             <div class="col-12">
                 <form method="POST" action="{% url 'update_profile' %}" enctype="multipart/form-data">
                     {% csrf_token %}
-                    
                     {% for field in form %}
                         <div class="form-outline mt-3">
                             <label class="col-sm-2 col-form-label text-nowrap" for="">{{ field.label }}</label>
