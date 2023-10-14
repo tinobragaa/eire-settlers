@@ -10,6 +10,13 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
+    body = forms.CharField(
+        widget=forms.Textarea(
+            attrs={'rows': 4, 'placeholder': 'Add a comment...'}
+            ),
+        label="",
+    )
+
 
 class ProfileForm(forms.ModelForm):
     """
