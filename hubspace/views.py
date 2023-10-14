@@ -86,7 +86,7 @@ class ArticleDetail(View):
 
 class ArticlesEndorsement(View):
     """
-    View that enables the post to be liked by members.
+    View that enables the article to be liked by members.
     """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
@@ -101,7 +101,7 @@ class ArticlesEndorsement(View):
 
 class SavedArticle(View):
     """
-    View that enables the post to be saved by members.
+    View that enables the article to be saved by members.
     """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
@@ -215,3 +215,27 @@ def delete_comment(request, comment_id):
             'article_detail', args=[comment.article.slug]))
 
     return render(request, "delete_comment.html")
+
+
+class ReportComment(View):
+    """
+    View that enables comments to be reported/unreported.
+    """
+    def post(self, request, pk, *args, **kwargs):
+        comment = get_object_or_404(Comment, id=pk)
+
+        if not comment.reported:
+            comment.reported = True
+            comment.save()
+            messages.success(request, 'Comment reported.')
+        elif comment.reported and self.request.user.is_superuser:
+            comment.reported = False
+            comment.save()
+            messages.success(request, 'Comment unreported.')
+        else:
+            messages.success(request, 'Comment reported.')
+
+        article_url = reverse(
+            'article_detail', kwargs={'slug': comment.article.slug}
+            )
+        return HttpResponseRedirect(article_url)
