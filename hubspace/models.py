@@ -52,6 +52,7 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name="new_comment")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    reported = models.BooleanField(default=False, editable=True)
 
     class Meta:
         ordering = ["created_on"]
