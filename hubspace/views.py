@@ -195,8 +195,11 @@ def edit_comment(request, comment_id):
             messages.success(request, 'The comment was edited successfully!')
             return HttpResponseRedirect(reverse(
                 'article_detail', args=[comment.article.slug]))
+    else:
+        form = CommentForm(instance=comment)
 
-    return render(request, "edit_comment.html")
+    context = {'form': form}
+    return render(request, "edit_comment.html", context)
 
 
 @login_required(login_url='/accounts/login/')

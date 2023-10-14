@@ -3,6 +3,9 @@ from django import forms
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Class that creates a form for the Comment model.
+    """
     class Meta:
         model = Comment
         fields = ('body',)
@@ -10,7 +13,7 @@ class CommentForm(forms.ModelForm):
 
 class ProfileForm(forms.ModelForm):
     """
-    Form to edit a profile.
+    Class that creates a form for the Profile model.
     """
     class Meta:
         model = Profile
@@ -32,7 +35,7 @@ class ProfileForm(forms.ModelForm):
             "about": "About",
             "image": "Profile Picture",
         }
-    
+
     first_name = forms.CharField(required=False)
     last_name = forms.CharField(required=False)
 
