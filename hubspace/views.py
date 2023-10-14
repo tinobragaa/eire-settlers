@@ -27,7 +27,7 @@ class ArticleDetail(View):
         queryset = Articles.objects.filter(status=1)
         articles = get_object_or_404(queryset, slug=slug)
         comments = (
-            articles.comments.filter(approved=True).order_by("-created_on"))
+            articles.comments.order_by("-created_on"))
         endorsed = False
         saved = False
         if articles.endorsement.filter(id=self.request.user.id).exists():
@@ -52,7 +52,7 @@ class ArticleDetail(View):
         queryset = Articles.objects.filter(status=1)
         articles = get_object_or_404(queryset, slug=slug)
         comments = (
-            articles.comments.filter(approved=True).order_by("-created_on"))
+            articles.comments.order_by("-created_on"))
         endorsed = False
         saved = False
         if articles.endorsement.filter(id=self.request.user.id).exists():
