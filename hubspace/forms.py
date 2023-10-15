@@ -1,10 +1,47 @@
-from .models import Comment, Profile
+from .models import Comment, Profile, Articles
 from django import forms
+from crispy_forms.helper import FormHelper
+
+class ArticleForm(forms.ModelForm):
+    """
+    Form to create and update articles.
+    """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_tag = False
+        self.helper.disable_csrf = True
+
+    class Meta:
+        model = Articles
+        fields = [
+            'title',
+            'excerpt',
+            'content',
+            'image_preview'
+        ]
+        labels = {
+            "title": "Title",
+            "excerpt": "Description",
+            "content": "Content",
+            'image_preview': "Image",
+        }
+        widgets = {
+            "title": forms.TextInput(
+                attrs={"placeholder": "Article title"}
+                ),
+            "excerpt": forms.Textarea(
+                attrs={"placeholder": "Write a short description"}
+                ),
+            "content": forms.Textarea(
+                attrs={"placeholder": "Enter your article content"}
+                ),
+        }
 
 
 class CommentForm(forms.ModelForm):
     """
-    Class that creates a form for the Comment model.
+    Form to create and update comments.
     """
     class Meta:
         model = Comment
@@ -20,7 +57,7 @@ class CommentForm(forms.ModelForm):
 
 class ProfileForm(forms.ModelForm):
     """
-    Class that creates a form for the Profile model.
+    Form to update member profile.
     """
     class Meta:
         model = Profile
@@ -32,7 +69,7 @@ class ProfileForm(forms.ModelForm):
             'nationality',
             'about',
             'image',
-            ]
+        ]
         labels = {
             "first_name": "First Name",
             "last_name": "Last Name",
