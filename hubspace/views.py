@@ -4,9 +4,10 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import logout
-from .models import Articles, Profile, Comment
-from .forms import CommentForm, ProfileForm
+from django.utils.text import slugify
 from django.contrib.auth.models import User
+from .models import Articles, Profile, Comment
+from .forms import CommentForm, ProfileForm, ArticleForm
 
 
 class ArticlesList(generic.ListView):
@@ -82,6 +83,36 @@ class ArticleDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+
+class CreateArticle(View):
+    """
+    View fthat allow user to create a new article.
+    """
+    def get(self, request):
+        if self.request.user.is_authenticated:
+            form = ArticleForm()
+            context = {"form": form, }
+
+            return render(request, "create_article.html", context)
+
+        else:
+            return redirect("index.html")
+
+    def post(self, request, *arg, **kwargs):
+        if self.request.user.is_authenticated:
+            form = ArticleForm(request.POST)
+            if form.is_valid():
+                form.instance.member = self.request.user
+                form.instance.slug = slugify(form.instance.title)
+                new_article = form.save()
+                messages.success(request, 'Article created successfully!')
+                return redirect("article_detail", new_article.slug)
+            else:
+                return render(request, "create_article.html", {"form": form})
+
+        else:
+            return redirect("index.html")
 
 
 class ArticlesEndorsement(View):
