@@ -2,6 +2,7 @@ from .models import Comment, Profile, Articles
 from django import forms
 from crispy_forms.helper import FormHelper
 
+
 class ArticleForm(forms.ModelForm):
     """
     Form to create and update articles.

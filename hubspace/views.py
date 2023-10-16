@@ -105,6 +105,12 @@ class CreateArticle(View):
             if form.is_valid():
                 form.instance.member = self.request.user
                 form.instance.slug = slugify(form.instance.title)
+
+                if 'image_preview' in request.FILES:
+                    form.instance.image_preview = request.FILES[
+                        'image_preview'
+                        ]
+
                 new_article = form.save()
                 messages.success(request, 'Article created successfully!')
                 return redirect("article_detail", new_article.slug)
