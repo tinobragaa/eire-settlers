@@ -15,7 +15,7 @@ class ArticlesList(generic.ListView):
     View that displays all articles on the landing page.
     """
     model = Articles
-    queryset = Articles.objects.filter(status=1).order_by("-created_on")
+    queryset = Articles.objects.order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
 
@@ -25,7 +25,7 @@ class ArticleDetail(View):
     View that displays the article details.
     """
     def get(self, request, slug, *args, **kwargs):
-        queryset = Articles.objects.filter(status=1)
+        queryset = Articles.objects.order_by("-created_on")
         articles = get_object_or_404(queryset, slug=slug)
         comments = (
             articles.comments.order_by("-created_on"))
@@ -50,7 +50,7 @@ class ArticleDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Articles.objects.filter(status=1)
+        queryset = Articles.objects.order_by("-created_on")
         articles = get_object_or_404(queryset, slug=slug)
         comments = (
             articles.comments.order_by("-created_on"))
