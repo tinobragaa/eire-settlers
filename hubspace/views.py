@@ -121,6 +121,43 @@ class CreateArticle(View):
             return redirect("index.html")
 
 
+class EditArticle(View):
+    """
+    View that allow member to edit their articles.
+    """
+    def get(self, request, *arg, **kwargs):
+        if "slug" in self.kwargs:
+            article = get_object_or_404(
+                Articles, slug=self.kwargs["slug"])
+
+            if (self.request.user == article.member):
+
+                form = ArticleForm(instance=article)
+
+                context = {"form": form, }
+
+                return render(request, "edit_article.html", context)
+
+            else:
+                return redirect("index.html")
+
+    def post(self, request, *arg, **kwargs):
+        article = get_object_or_404(
+            Articles, slug=self.kwargs["slug"])
+
+        if (self.request.user == article.member):
+            form = ArticleForm(request.POST, instance=article)
+
+            if form.is_valid():
+                if 'image_preview' in request.FILES:
+                    form.instance.image_preview = request.FILES[
+                        'image_preview'
+                        ]
+                edited_article = form.save()
+                messages.success(request, 'Article updated successfully!')
+                return redirect("article_detail", edited_article.slug)
+
+
 class ArticlesEndorsement(View):
     """
     View that enables the article to be liked by members.
