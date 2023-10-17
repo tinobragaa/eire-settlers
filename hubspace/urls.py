@@ -10,6 +10,7 @@ urlpatterns = [
     path('edit-comment/<int:comment_id>/', views.edit_comment, name="edit_comment"),
     path('report_comment/<int:pk>/', views.ReportComment.as_view(), name="report_comment"),
     path('create_article/', views.CreateArticle.as_view(), name="create_article"),
+    path('article_edit/<slug:slug>/', views.EditArticle.as_view(), name='edit_article'),
     path('<slug:slug>/', views.ArticleDetail.as_view(), name='article_detail'),
     path('endorse/<slug:slug>', views.ArticlesEndorsement.as_view(), name="articles_endorsement"),
     path('save/<slug:slug>', views.SavedArticle.as_view(), name="saved_article"),
