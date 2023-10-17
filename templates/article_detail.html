@@ -9,6 +9,14 @@
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ articles.title }}</h1>
                 <p class="post-subtitle">{{ articles.member }} | {{ articles.created_on }}</p>
+                {% if user.is_authenticated and request.user == articles.member %}
+                    <div class="col-12 p-0 d-flex">
+                        <a class="btn btn-xs btn-outline-danger mb-1 text-nowrap" href="#">Delete</a>
+                    </div>
+                    <div class="col-12 p-0 d-flex">
+                        <a class="btn btn-outline-dark" href="{% url 'edit_article' slug=articles.slug %}">Edit</a>
+                    </div>
+                {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in articles.image_preview.url %}
