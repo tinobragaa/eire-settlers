@@ -95,8 +95,8 @@ class CreateArticle(View):
             context = {"form": form, }
 
             return render(request, "create_article.html", context)
-
         else:
+
             return redirect("index.html")
 
     def post(self, request, *arg, **kwargs):
@@ -105,25 +105,25 @@ class CreateArticle(View):
             if form.is_valid():
                 form.instance.member = self.request.user
                 form.instance.slug = slugify(form.instance.title)
-
                 if 'image_preview' in request.FILES:
                     form.instance.image_preview = request.FILES[
                         'image_preview'
                         ]
-
                 new_article = form.save()
                 messages.success(request, 'Article created successfully!')
+
                 return redirect("article_detail", new_article.slug)
             else:
-                return render(request, "create_article.html", {"form": form})
 
+                return render(request, "create_article.html", {"form": form})
         else:
+
             return redirect("index.html")
 
 
 class EditArticle(View):
     """
-    View that allow member to edit their articles.
+    View that allow members to edit their articles.
     """
     def get(self, request, *arg, **kwargs):
         if "slug" in self.kwargs:
@@ -137,17 +137,15 @@ class EditArticle(View):
                 context = {"form": form, }
 
                 return render(request, "edit_article.html", context)
-
             else:
+
                 return redirect("index.html")
 
     def post(self, request, *arg, **kwargs):
         article = get_object_or_404(
             Articles, slug=self.kwargs["slug"])
-
         if (self.request.user == article.member):
             form = ArticleForm(request.POST, instance=article)
-
             if form.is_valid():
                 if 'image_preview' in request.FILES:
                     form.instance.image_preview = request.FILES[
@@ -155,7 +153,37 @@ class EditArticle(View):
                         ]
                 edited_article = form.save()
                 messages.success(request, 'Article updated successfully!')
+
                 return redirect("article_detail", edited_article.slug)
+
+
+class DeleteArticle(View):
+    """
+    View that allow members to delete their articles.
+    """
+    def get(self, request, slug, *arg, **kwargs):
+        article = get_object_or_404(
+            Articles, slug=self.kwargs["slug"])
+
+        context = {"article": article}
+
+        if (self.request.user == article.member):
+            return render(request, "delete_article.html", context)
+
+        else:
+            return redirect("index.html")
+
+    def post(self, request, *arg, **kwargs):
+        article = get_object_or_404(
+            Articles, slug=self.kwargs["slug"])
+
+        if (self.request.user == article.member):
+            article.delete()
+            return HttpResponseRedirect(reverse('home')) 
+        
+        else:
+
+            return redirect("index.html")
 
 
 class ArticlesEndorsement(View):
@@ -164,7 +192,6 @@ class ArticlesEndorsement(View):
     """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
-
         if articles.endorsement.filter(id=request.user.id).exists():
             articles.endorsement.remove(request.user)
         else:
@@ -179,7 +206,6 @@ class SavedArticle(View):
     """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
-
         if articles.saved_items.filter(id=request.user.id).exists():
             articles.saved_items.remove(request.user)
         else:
