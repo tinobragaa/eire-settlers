@@ -26,20 +26,25 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'articles_list' %}">Articles</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'create_article' %}">New Article</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'member_profile' %}">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{% url 'member_profile' %}">My Profile</a></li>
+                                <li><a class="dropdown-item" href="#">My Articles</a></li>
+                                <li><a class="dropdown-item" href="#">Saved Articles</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a></li>
+                            </ul>
                         </li>
                         {% else %}
                         <li class="nav-item">
