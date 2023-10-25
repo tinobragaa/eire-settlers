@@ -11,13 +11,16 @@ from .forms import CommentForm, ProfileForm, ArticleForm
 
 
 class ArticlesList(generic.ListView):
-    """
-    View that displays all articles on the landing page.
-    """
     model = Articles
     queryset = Articles.objects.order_by("-created_on")
-    template_name = "index.html"
     paginate_by = 6
+
+    def get_template_names(self):
+        # Determine the template name based on the URL
+        if self.request.path == '/articles/':
+            return ['articles_list.html']
+        else:
+            return ['index.html']
 
 
 class ArticleDetail(View):
