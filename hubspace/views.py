@@ -182,8 +182,8 @@ class DeleteArticle(View):
 
         if (self.request.user == article.member):
             article.delete()
-            return HttpResponseRedirect(reverse('home')) 
-        
+            return HttpResponseRedirect(reverse('home'))
+
         else:
 
             return redirect("index.html")
@@ -217,9 +217,25 @@ class SavedArticle(View):
         return HttpResponseRedirect(reverse('article_detail', args=[slug]))
 
 
+class MemberArticles(View):
+    """
+    View that displays the articles created by the member.
+    """
+    template_name = "member_articles.html"
+
+    def get(self, request, user):
+        user_object = get_object_or_404(User, username=user)
+        articles = Articles.objects.filter(member=user_object)
+        return render(
+            request,
+            self.template_name,
+            {'articles_list': articles, 'user': user_object}
+        )
+
+
 class MemberProfile(View):
     """
-    View to display the profile page.
+    View that displays the profile page.
     """
     def get(self, request, *arg, **kwargs):
         if "user" in self.kwargs:
