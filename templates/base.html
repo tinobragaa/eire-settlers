@@ -39,7 +39,7 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="{% url 'member_profile' %}">My Profile</a></li>
                                 <li><a class="dropdown-item" href="{% url 'member_articles' user=user.username %}">My Articles</a></li>
-                                <li><a class="dropdown-item" href="#">Saved Articles</a></li>
+                                <li><a class="dropdown-item" href="{% url 'saved_articles' user=user.username %}">Saved Articles</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
