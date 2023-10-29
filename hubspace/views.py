@@ -213,13 +213,30 @@ class SavedArticle(View):
             articles.saved_items.remove(request.user)
         else:
             articles.saved_items.add(request.user)
+            messages.success(request, 'Successfully saved!')
 
         return HttpResponseRedirect(reverse('article_detail', args=[slug]))
 
 
+class SavedArticles(View):
+    """
+    View that displays all articles saved by the member logged in.
+    """
+    template_name = "saved_articles.html"
+
+    def get(self, request, user):
+        user_object = get_object_or_404(User, username=user)
+        articles = Articles.objects.filter(saved_items=user_object)
+        return render(
+            request,
+            self.template_name,
+            {'articles_list': articles, 'user': user_object}
+        )
+
+
 class MemberArticles(View):
     """
-    View that displays the articles created by the member.
+    View that displays the articles created by the member logged in.
     """
     template_name = "member_articles.html"
 
