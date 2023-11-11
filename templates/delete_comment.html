@@ -16,11 +16,8 @@
             <div class="row d-flex flex-nowrap">
                 <form class="d-flex justify-content-around" method="post" action="">
                     {% csrf_token %}
-                    <a type="button" class="btn btn-outline-warning" href="javascript:history.go(-1)">Cancel</a>
-                    <button type="submit" class="btn btn-outline-danger"value="">
-                        <i class="fa-solid fa-trash-can"></i>
-                         Delete
-                    </button>
+                    <button type="submit" class="btn btn-outline-danger"value="">Delete</button>
+                    <a type="button" class="btn btn-outline-dark" href="javascript:history.go(-1)">Cancel</a>
                 </form>
             </div> 
         </div>

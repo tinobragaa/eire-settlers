@@ -9,6 +9,14 @@
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ articles.title }}</h1>
                 <p class="post-subtitle">{{ articles.member }} | {{ articles.created_on }}</p>
+                {% if user.is_authenticated and request.user == articles.member %}
+                    <div class="col-12 p-0 d-flex">
+                        <a class="btn btn-xs btn-outline-danger mb-1 text-nowrap" href="{% url 'delete_article' slug=articles.slug %}">Delete</a>
+                    </div>
+                    <div class="col-12 p-0 d-flex">
+                        <a class="btn btn-outline-dark" href="{% url 'edit_article' slug=articles.slug %}">Edit</a>
+                    </div>
+                {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in articles.image_preview.url %}
@@ -92,8 +100,18 @@
                     {{ comment.body | linebreaks }}
                     {% if user.is_authenticated and request.user == comment.member %}
                     <div class="col-12 p-0 d-flex">
-                        <a class="btn btn-xs btn-outline-danger mb-4 text-nowrap" href="{% url 'delete_comment' comment.id %}"><i class="fa-solid fa-trash-can"></i> Delete</a>
+                        <a class="btn btn-xs btn-outline-danger mb-1 text-nowrap" href="{% url 'delete_comment' comment.id %}">Delete</a>
                     </div>
+                    <div class="col-12 p-0 d-flex">
+                        <a class="btn btn-outline-dark" href="{% url 'edit_comment' comment.id %}">Edit</a>
+                    </div>
+                    {% else %}
+                    {% if user.is_authenticated  %}
+                    <form method="POST" action="{% url 'report_comment' comment.id %}">
+                        {% csrf_token %} 
+                        <button type="submit" class="btn btn-outline-dark">Report</button>
+                    </form>
+                    {% endif %}
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -102,18 +120,13 @@
     </div>
     <div class="col-md-4 card mb-4 mt-3 ">
         <div class="card-body">
-            {% if commented %}
-            <div class="alert alert-success" role="alert">
-                Your comment is awaiting approval
-            </div>
-            {% endif %}
             {% if user.is_authenticated %}
             <p>{{ user.username }}</p>
-            <h3>Add a comment:</h3>
-            <form method="post" style="margin-top: 1.3em;">
+            <form method="post">
+                {{ comment_form.body.label_tag }}
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                <button type="submit" class="btn btn-outline-success mt-3">Post</button>
             </form>
             {% else %}
             <div class="alert alert-success" role="alert">

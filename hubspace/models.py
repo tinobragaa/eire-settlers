@@ -5,14 +5,12 @@ from django_resized import ResizedImageField
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-STATUS = ((0, "Draft"), (1, "Published"))
-
 
 class Articles(models.Model):
     """
     Model class for the articles added to the groups.
     Includes fields for title, member, image, excerpt, content,
-    posted date, updated date and status.
+    posted date and updated date.
     """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -26,7 +24,6 @@ class Articles(models.Model):
     content = models.TextField()
     image_preview = CloudinaryField("image", default="placeholder")
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
     endorsement = models.ManyToManyField(
         User, related_name="content_endorsement", blank=True)
     saved_items = models.ManyToManyField(
@@ -52,7 +49,7 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name="new_comment")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    reported = models.BooleanField(default=False, editable=True)
 
     class Meta:
         ordering = ["created_on"]

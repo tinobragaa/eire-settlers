@@ -4,19 +4,23 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import logout
-from .models import Articles, Profile, Comment
-from .forms import CommentForm, ProfileForm
+from django.utils.text import slugify
 from django.contrib.auth.models import User
+from .models import Articles, Profile, Comment
+from .forms import CommentForm, ProfileForm, ArticleForm
 
 
 class ArticlesList(generic.ListView):
-    """
-    View that displays all articles on the landing page.
-    """
     model = Articles
-    queryset = Articles.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
+    queryset = Articles.objects.order_by("-created_on")
     paginate_by = 6
+
+    def get_template_names(self):
+        # Determine the template name based on the URL
+        if self.request.path == '/articles/':
+            return ['articles_list.html']
+        else:
+            return ['index.html']
 
 
 class ArticleDetail(View):
@@ -24,10 +28,10 @@ class ArticleDetail(View):
     View that displays the article details.
     """
     def get(self, request, slug, *args, **kwargs):
-        queryset = Articles.objects.filter(status=1)
+        queryset = Articles.objects.order_by("-created_on")
         articles = get_object_or_404(queryset, slug=slug)
         comments = (
-            articles.comments.filter(approved=True).order_by("-created_on"))
+            articles.comments.order_by("-created_on"))
         endorsed = False
         saved = False
         if articles.endorsement.filter(id=self.request.user.id).exists():
@@ -49,10 +53,10 @@ class ArticleDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Articles.objects.filter(status=1)
+        queryset = Articles.objects.order_by("-created_on")
         articles = get_object_or_404(queryset, slug=slug)
         comments = (
-            articles.comments.filter(approved=True).order_by("-created_on"))
+            articles.comments.order_by("-created_on"))
         endorsed = False
         saved = False
         if articles.endorsement.filter(id=self.request.user.id).exists():
@@ -84,13 +88,113 @@ class ArticleDetail(View):
         )
 
 
+class CreateArticle(View):
+    """
+    View fthat allow user to create a new article.
+    """
+    def get(self, request):
+        if self.request.user.is_authenticated:
+            form = ArticleForm()
+            context = {"form": form, }
+
+            return render(request, "create_article.html", context)
+        else:
+
+            return redirect("index.html")
+
+    def post(self, request, *arg, **kwargs):
+        if self.request.user.is_authenticated:
+            form = ArticleForm(request.POST)
+            if form.is_valid():
+                form.instance.member = self.request.user
+                form.instance.slug = slugify(form.instance.title)
+                if 'image_preview' in request.FILES:
+                    form.instance.image_preview = request.FILES[
+                        'image_preview'
+                        ]
+                new_article = form.save()
+                messages.success(request, 'Article created successfully!')
+
+                return redirect("article_detail", new_article.slug)
+            else:
+
+                return render(request, "create_article.html", {"form": form})
+        else:
+
+            return redirect("index.html")
+
+
+class EditArticle(View):
+    """
+    View that allow members to edit their articles.
+    """
+    def get(self, request, *arg, **kwargs):
+        if "slug" in self.kwargs:
+            article = get_object_or_404(
+                Articles, slug=self.kwargs["slug"])
+
+            if (self.request.user == article.member):
+
+                form = ArticleForm(instance=article)
+
+                context = {"form": form, }
+
+                return render(request, "edit_article.html", context)
+            else:
+
+                return redirect("index.html")
+
+    def post(self, request, *arg, **kwargs):
+        article = get_object_or_404(
+            Articles, slug=self.kwargs["slug"])
+        if (self.request.user == article.member):
+            form = ArticleForm(request.POST, instance=article)
+            if form.is_valid():
+                if 'image_preview' in request.FILES:
+                    form.instance.image_preview = request.FILES[
+                        'image_preview'
+                        ]
+                edited_article = form.save()
+                messages.success(request, 'Article updated successfully!')
+
+                return redirect("article_detail", edited_article.slug)
+
+
+class DeleteArticle(View):
+    """
+    View that allow members to delete their articles.
+    """
+    def get(self, request, slug, *arg, **kwargs):
+        article = get_object_or_404(
+            Articles, slug=self.kwargs["slug"])
+
+        context = {"article": article}
+
+        if (self.request.user == article.member):
+            return render(request, "delete_article.html", context)
+
+        else:
+            return redirect("index.html")
+
+    def post(self, request, *arg, **kwargs):
+        article = get_object_or_404(
+            Articles, slug=self.kwargs["slug"])
+
+        if (self.request.user == article.member):
+            article.delete()
+            return HttpResponseRedirect(reverse('home'))
+
+        else:
+
+            return redirect("index.html")
+
+
 class ArticlesEndorsement(View):
     """
-    View that enables the post to be liked by members.
+    View that enables the article to be liked by members.
     """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
-
         if articles.endorsement.filter(id=request.user.id).exists():
             articles.endorsement.remove(request.user)
         else:
@@ -101,22 +205,54 @@ class ArticlesEndorsement(View):
 
 class SavedArticle(View):
     """
-    View that enables the post to be saved by members.
+    View that enables the article to be saved by members.
     """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
-
         if articles.saved_items.filter(id=request.user.id).exists():
             articles.saved_items.remove(request.user)
         else:
             articles.saved_items.add(request.user)
+            messages.success(request, 'Successfully saved!')
 
         return HttpResponseRedirect(reverse('article_detail', args=[slug]))
 
 
+class SavedArticles(View):
+    """
+    View that displays all articles saved by the member logged in.
+    """
+    template_name = "saved_articles.html"
+
+    def get(self, request, user):
+        user_object = get_object_or_404(User, username=user)
+        articles = Articles.objects.filter(saved_items=user_object)
+        return render(
+            request,
+            self.template_name,
+            {'articles_list': articles, 'user': user_object}
+        )
+
+
+class MemberArticles(View):
+    """
+    View that displays the articles created by the member logged in.
+    """
+    template_name = "member_articles.html"
+
+    def get(self, request, user):
+        user_object = get_object_or_404(User, username=user)
+        articles = Articles.objects.filter(member=user_object)
+        return render(
+            request,
+            self.template_name,
+            {'articles_list': articles, 'user': user_object}
+        )
+
+
 class MemberProfile(View):
     """
-    View to display the profile page.
+    View that displays the profile page.
     """
     def get(self, request, *arg, **kwargs):
         if "user" in self.kwargs:
@@ -181,6 +317,28 @@ def delete_profile(request):
 
 
 @login_required(login_url='/accounts/login/')
+def edit_comment(request, comment_id):
+    """
+    View that allow to edit a comment.
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES, instance=comment)
+        if form.is_valid():
+            form.instance.user = request.user
+            form.save()
+            messages.success(request, 'The comment was edited successfully!')
+            return HttpResponseRedirect(reverse(
+                'article_detail', args=[comment.article.slug]))
+    else:
+        form = CommentForm(instance=comment)
+
+    context = {'form': form}
+    return render(request, "edit_comment.html", context)
+
+
+@login_required(login_url='/accounts/login/')
 def delete_comment(request, comment_id):
     """
     View that allow users to delete their comments.
@@ -194,3 +352,26 @@ def delete_comment(request, comment_id):
 
     return render(request, "delete_comment.html")
 
+
+class ReportComment(View):
+    """
+    View that enables comments to be reported/unreported.
+    """
+    def post(self, request, pk, *args, **kwargs):
+        comment = get_object_or_404(Comment, id=pk)
+
+        if not comment.reported:
+            comment.reported = True
+            comment.save()
+            messages.success(request, 'Comment reported.')
+        elif comment.reported and self.request.user.is_superuser:
+            comment.reported = False
+            comment.save()
+            messages.success(request, 'Comment unreported.')
+        else:
+            messages.success(request, 'Comment reported.')
+
+        article_url = reverse(
+            'article_detail', kwargs={'slug': comment.article.slug}
+            )
+        return HttpResponseRedirect(article_url)

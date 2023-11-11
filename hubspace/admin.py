@@ -7,8 +7,8 @@ from django_summernote.admin import SummernoteModelAdmin
 class ArticlesAdmin(SummernoteModelAdmin):
 
     prepopulated_fields = {'slug': ('title',)}
-    list_filter = ('status', 'created_on')
-    list_display = ('title', 'slug', 'status', 'created_on')
+    list_filter = ('created_on',)
+    list_display = ('title', 'slug', 'created_on')
     search_fields = ['title', 'content']
     summernote_fields = ('content')
 
@@ -16,8 +16,8 @@ class ArticlesAdmin(SummernoteModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
 
-    list_filter = ('approved', 'created_on')
-    list_display = ('body', 'article', 'created_on', 'approved')
+    list_filter = ('created_on',)
+    list_display = ('body', 'article', 'created_on')
     search_fields = ['name', 'email', 'body']
     actions = ['approve_comments']
 
