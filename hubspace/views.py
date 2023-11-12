@@ -11,12 +11,14 @@ from .forms import CommentForm, ProfileForm, ArticleForm
 
 
 class ArticlesList(generic.ListView):
+    """
+    View that displays the existent articles.
+    """
     model = Articles
     queryset = Articles.objects.order_by("-created_on")
     paginate_by = 6
 
     def get_template_names(self):
-        # Determine the template name based on the URL
         if self.request.path == '/articles/':
             return ['articles_list.html']
         else:
@@ -25,7 +27,7 @@ class ArticlesList(generic.ListView):
 
 class ArticleDetail(View):
     """
-    View that displays the article details.
+    View that displays the articles details.
     """
     def get(self, request, slug, *args, **kwargs):
         queryset = Articles.objects.order_by("-created_on")
@@ -90,7 +92,7 @@ class ArticleDetail(View):
 
 class CreateArticle(View):
     """
-    View fthat allow user to create a new article.
+    A view that allow members to create a new article.
     """
     def get(self, request):
         if self.request.user.is_authenticated:
@@ -191,7 +193,7 @@ class DeleteArticle(View):
 
 class ArticlesEndorsement(View):
     """
-    View that enables the article to be liked by members.
+    View that enables the article to be liked by other members.
     """
     def post(self, request, slug):
         articles = get_object_or_404(Articles, slug=slug)
@@ -284,7 +286,7 @@ class MemberProfile(View):
 @login_required(login_url='/accounts/login/')
 def update_profile(request):
     """
-    View that will update the user profile.
+    View that will update the member profile.
     """
     profile = request.user.profile
     form = ProfileForm(instance=profile)
@@ -304,7 +306,7 @@ def update_profile(request):
 @login_required(login_url='/accounts/login/')
 def delete_profile(request):
     """
-    View that will delete the user profile.
+    View that will delete the member profile.
     """
     if request.method == "POST":
         user = request.user
@@ -319,7 +321,7 @@ def delete_profile(request):
 @login_required(login_url='/accounts/login/')
 def edit_comment(request, comment_id):
     """
-    View that allow to edit a comment.
+    View that allow members to edit a comment.
     """
     comment = get_object_or_404(Comment, id=comment_id)
 
@@ -341,7 +343,7 @@ def edit_comment(request, comment_id):
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, comment_id):
     """
-    View that allow users to delete their comments.
+    View that allow members to delete their comments.
     """
     if request.method == "POST":
         comment = get_object_or_404(Comment, id=comment_id)

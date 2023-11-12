@@ -30,9 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['eire-settlers-9b0e3e0c192c.herokuapp.com', 'localhost', '8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['eire-settlers-9b0e3e0c192c.herokuapp.com', 'localhost', '8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu106.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS=['https://8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu105.gitpod.io', 'https://eire-settlers-9b0e3e0c192c.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS=['https://8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu106.gitpod.io', 'https://eire-settlers-9b0e3e0c192c.herokuapp.com/']
 
 # Application definition
 

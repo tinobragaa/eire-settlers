@@ -75,16 +75,18 @@ class Profile(models.Model):
         max_length=20,
         null=True,
         blank=True,
+        default=''
         )
     last_name = models.CharField(
         max_length=20,
         null=True,
         blank=True,
+        default=''
         )
     pronouns = models.CharField(
         max_length=15,
         choices=PRONOUN_CHOICES,
-        default='Unspecified'
+        default=''
         )
     image = ResizedImageField(
         size=[300, 300],
@@ -97,18 +99,20 @@ class Profile(models.Model):
     location = models.CharField(
         max_length=50,
         null=True,
-        blank=True
+        blank=True,
+        default=''
         )
     nationality = models.CharField(
         max_length=40,
         null=True,
         blank=True,
-        default='Unspecified'
+        default=''
         )
     about = models.TextField(
         max_length=2000,
         null=True,
-        blank=True
+        blank=True,
+        default=''
         )
 
     def __str__(self):
