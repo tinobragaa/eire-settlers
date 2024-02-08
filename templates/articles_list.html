@@ -18,14 +18,14 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ article.image_preview.url }}">
                                 {% endif %}
+                                <a href="{% url 'article_detail' article.slug  %}" class="post-link">
+                                    <h2 class="card-title">{{ article.title }}</h2>
+                                </a>
                                 <div class="image-flash">
                                     <p class="author">Author: {{ article.member }}</p>
                                     <p class="card-text">{{ article.excerpt }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'article_detail' article.slug  %}" class="post-link">
-                                <h2 class="card-title">{{ article.title }}</h2>
-                            </a>
                             <hr/>
                             <p class="card-text text-muted h6">{{ article.created_on }}<i class="fa-regular fa-circle-check"></i>
                                 {{ article.endorsement_amount }}</p>

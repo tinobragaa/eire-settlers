@@ -67,7 +67,7 @@ footer {
     margin-top: 5px;
 }
 
-.btn-one {
+.btn-one, .edit-btn {
     position: relative;
     overflow: hidden;
     background-color: #84aeaa;
@@ -76,8 +76,19 @@ footer {
 }
 
 /* Hover effect */
-.btn-one:hover {
+.btn-one:hover, .edit-btn:hover {
     background-color: #9ca593; 
     color: white; 
     border-color: black; 
+}
+
+.card-img-top {
+    max-width: 100%; /* Set maximum width */
+    max-height: 200px; /* Set maximum height */
+    object-fit: cover; /* Ensure image covers the entire container */
+}
+
+.card-body a {
+    color: black;
+    text-decoration: none;
 }
