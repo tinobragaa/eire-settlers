@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% if not user.is_authenticated %}
 <div class="main-banner d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="row align-items-center">
@@ -12,12 +13,14 @@
                 <div class="text-center text-black">
                     <h1>Welcome to Our Immigrant Community</h1>
                     <p>Empowering immigrants with valuable resources and insights</p>
-                    <a href="{% url 'articles_list' %}" class="btn btn-primary btn-lg mt-4">Read Now</a>
+                    <a href="{% url 'articles_list' %}" class="btn btn-one btn-primary btn-lg mt-4">Read Now</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endif %}
+
 
 <div class="container-fluid">
     <div class="row">
