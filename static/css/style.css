@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Titillium+Web:wght@200;300;400&display=swap');
+
+body {
+    background-color: #f4f2eb;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.nav-link {
+    font-size: 1.3 rem;
+    color: black;
+    font-weight: 400;
+}
+
 #profile-image {
     max-width: 120px; 
     max-height: 120px; 
@@ -16,4 +29,14 @@
 
 .navbar {
     padding: 0;
+    height: 4rem;
+}
+
+.nav-bg {
+    background-color: #9ca593;
+}
+
+.navbar-brand {
+    font-family: 'Protest Strike', sans-serif;
+    font-size: 1.7rem;
 }
