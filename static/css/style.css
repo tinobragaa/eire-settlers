@@ -3,6 +3,9 @@
 body {
     background-color: #f4f2eb;
     font-family: 'Titillium Web', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-link {
@@ -40,3 +43,34 @@ body {
     font-family: 'Protest Strike', sans-serif;
     font-size: 1.7rem;
 }
+
+.footer-bg {
+    background-color: #84aeaa;
+    padding: 0 10px;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.main-banner {
+    height: 90vh;
+}
+
+.btn {
+    background-color: #84aeaa;
+    border-radius: 100px;
+    color: black;
+    border: 2px solid black;
+}
+
+.btn:hover {
+    background-color: #9ca593;
+    color: black;
+    border: 2px solid black;
+}
+
