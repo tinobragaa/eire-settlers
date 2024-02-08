@@ -84,7 +84,6 @@ Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and 
 ![Colour Palette](/static/images/documentation/color-palette.jpg)
 
 </details>
-<br>
 
 # Features
 
@@ -146,8 +145,6 @@ The following resources and tools were used to develop the website:
 - Font Awesome
 - Stack Overflow
 - Tables Generator
-- CI Python Linter
-- JSHint Validation
 - Adobe Photoshop 2023
 - Techsini Mockup Generator
 - GitHub Wiki TOC generator
@@ -164,18 +161,10 @@ I confirm that the website works as expected under the CRUD functionality for ar
 The Nu HTML Checker (W3C) is used to validate HTML documents. The files passed without any errors.
 
 <details>
-<summary>index HTML Validation</summary>
+<summary>HTML Validation</summary>
 <br>
 
-![index HTML Validation]()
-
-</details>
-
-<details>
-<summary>404 Error HTML Validation</summary>
-<br>
-
-![404 Error HTML Validation]()
+![index HTML Validation](/static/images/documentation/html-validation.jpg)
 
 </details>
 
@@ -187,31 +176,7 @@ The W3C Jigsaw CSS Validation Service is used to validate CSS documents. The fil
 <summary>CSS Validation</summary>
 <br>
 
-![CSS Validation]()
-
-</details>
-
-# JS Validation
-
-The JSHint is used to validate JavaScript documents. The files passed without any errors.
-
-<details>
-<summary>JS Validation</summary>
-<br>
-
-![JS Validation]()
-
-</details>
-
-# Python Validation
-
-The project was validated using the provided CI Python Linter and it was cleared with no errors.
-
-<details>
-<summary>Python Validation</summary>
-<br>
-
-![Python Validation]()
+![CSS Validation](/static/images/documentation/css-validation.jpg)
 
 </details>
 
