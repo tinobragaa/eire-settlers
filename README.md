@@ -1,82 +1,23 @@
 # Eire Settlers
 (Developer: Valentino Braga)
 
+Eire Settlers is a dynamic full-stack Django project designed to cultivate a vibrant community for immigrants relocating to Ireland. This project's purpose is to empower newcomers with essential information and establish a supportive network. Serving as a comprehensive platform, Eire Settlers enables individuals to share insights, experiences, and valuable advice on various aspects of settling in Ireland. Inspired by the active engagement of the Brazilian community on Facebook groups, Eire Settlers has evolved into a dedicated platform aimed at enhancing this concept. Drawing from the collaborative spirit observed within online communities, the goal is to provide a structured and inclusive space where immigrants from all backgrounds can come together to exchange knowledge, seek guidance, and forge meaningful connections as they embark on their journey to Ireland.
 
-Project description.
-
-![Mockup image]()
+![Mockup image](/static/images/documentation/mockup.jpg)
 
 [Live Website](https://eire-settlers-9b0e3e0c192c.herokuapp.com/)
 
-# Table of Contents
+# User Stories
 
+[Kanban Board](https://github.com/users/tinobragaa/projects/3)
 
-# User Experience (UX)
-
-## Business Goals
-
-### User Goals
-- 
-- 
-- 
-- 
-- 
-- 
-
-### Website Owner Goals
-- 
--
--
--
--
--
-
-### Target Audience
-- 
--
--
--
--
--
-
-### User Expectations
-- 
-- 
--
--
--
--
-
-## User Stories
-
-### First-Time User
-1. As a first-time user, I want to 
-2. As a first-time user, I want to 
-3. As a first-time user, I want to 
-
-### Returning User
-1. As a returning user, I want to 
-2. As a returning user, I want to 
-3. As a returning user, I want to 
-
-### Site Owner
-1. As a site owner, I want 
-2. As a site owner, I want 
-3. As a site owner, I want 
-
-# Design
-
-Design's description.
-
-## Wireframes
-
-Wireframe's description.
+# Wireframes
 
 <details>
 <summary>Landing Page</summary>
 <br>
 
-![Landing Page](docs/wireframes/landing-v1.jpg)
+![Landing Page](/static/images/documentation/wireframes/first-version/landing-page.jpg)
 
 </details>
 
@@ -84,7 +25,7 @@ Wireframe's description.
 <summary>Sign In</summary>
 <br>
 
-![Sign In](docs/wireframes/sign-in-v1.jpg)
+![Sign In](/static/images/documentation/wireframes/first-version/sign-in.jpg)
 
 </details>
 
@@ -92,7 +33,7 @@ Wireframe's description.
 <summary>Sign Up</summary>
 <br>
 
-![Sign Up](docs/wireframes/sign-up-v1.jpg)
+![Sign Up](/static/images/documentation/wireframes/first-version/sign-up.jpg)
 
 </details>
 
@@ -100,7 +41,7 @@ Wireframe's description.
 <summary>Groups</summary>
 <br>
 
-![Groups](docs/wireframes/groups-v1.jpg)
+![Groups](/static/images/documentation/wireframes/first-version/group-selection.jpg)
 
 </details>
 
@@ -108,93 +49,88 @@ Wireframe's description.
 <summary>Articles Interface</summary>
 <br>
 
-![Articles Interface](docs/wireframes/articles-v1.jpg)
+![Articles Interface](/static/images/documentation/wireframes/first-version/articles-view.jpg)
 
 </details>
 
 <details>
-<summary>Articles Details</summary>
+<summary>Article Details</summary>
 <br>
 
-![Articles Details](docs/wireframes/article-details-v1.jpg)
+![Articles Details](/static/images/documentation/wireframes/first-version/article-detail.jpg)
 
 </details>
 
-## Typography
+# Design
 
-Typography's description.
+The website design adopts a friendly and pastel color scheme, strategically chosen to evoke a sense of warmth and approachability. Drawing from the principles of color psychology, our palette incorporates soft hues such as green, bege, blue, and turquoise. These pastel tones are known for their calming and uplifting effects, creating a visually pleasing environment that promotes a positive user experience.
 
-![Image name](Image link)
+## Typography/Colour Palette
 
-## Colour Palette
+Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and Titillium fonts to convey elegance and credibility. Titillium exudes a subtle sophistication with its clean lines and balanced proportions, while Protest Strike adds a touch of gravitas with its sturdy and authoritative appearance. This carefully curated combination strikes a harmonious balance between elegance and seriousness, instilling confidence and reliability in the users. 
 
-Colour's palette description.
+<details>
+<summary>Typography</summary>
+<br>
 
-![Image name](Image link)
+![Typography](/static/images/documentation/typography.jpg)
 
-## Imagery
+</details>
 
-Imagery's description.
+<details>
+<summary>Colour Palette</summary>
+<br>
 
-![Image name](Image link)
+![Colour Palette](/static/images/documentation/color-palette.jpg)
 
-## Structure 
-
-Structure's description.
-
--
--
--
--
--
--
+</details>
+<br>
 
 # Features
 
-Feature's description.
-
-### Main Page
--
--
--
--
-<details>
-<summary>Main Page</summary>
-<br>
-
-![Main Page](Main Page Image)
-
-</details>
-<details>
-<summary>Functionality</summary>
-<br>
-
-![Functionality]()
-
-</details>
+- Profile: Users can view their profile containing information such as username, profile picture, bio, and activity history.
+- Edit Profile: Users can modify their profile information, including username, profile picture, and bio.
+- Remove Profile: Users can opt to delete their profile permanently from the platform.
+- Sign In/Sign Up: Users can log in to their existing accounts or create new accounts to access the platform's features.
+- Register: New users can sign up for an account on the platform by providing necessary information such as email, username, and password.
+- Like/Dislike: Users can express their preference for articles or comments by liking or disliking them.
+- Save Articles: Users can bookmark articles they find interesting to access them later.
+- Unsave Articles: Users can remove saved articles from their bookmarked list.
+- Comment: Users can post comments on articles to share their thoughts or engage in discussions.
+- Report Comment: Users can report inappropriate or abusive comments to the platform administrators.
+- Edit Comment: Users can make changes to their own comments after posting them.
+- Delete Comment: Users can delete their own comments if they wish to remove them from the platform.
+- Create Article: Users can compose and publish new articles on the platform.
+- Edit Article: Authors can make revisions to their published articles.
+- Delete Article: Authors can remove their articles from the platform if needed.
+- Hamburger Menu: The menu provides quick access to various features, including saved articles and articles created by the user.
 
 # Future Features
 
 A few features that could make the website even better are listed here:
 
-1. 
+1. Dark Mode: Introducing a dark mode option can enhance user experience by reducing eye strain and making the website more visually appealing in low-light environments. Users can switch between light and dark modes based on their preference.
 
-2. 
+2. Admin Panel: Implementing an admin panel empowers website administrators with comprehensive control over site operations. Admins can manage user accounts, moderate content, analyze website performance, and perform other essential tasks efficiently from a centralized dashboard.
 
-3. 
+3. Add Friend Functionality: Incorporating an "Add Friend" feature enables users to expand their social connections within the website's community. Users can send friend requests to others, fostering interaction and engagement. This feature enhances the social aspect of the platform and encourages networking among users.
 
-4. 
+4. Search Functionality: Integrating a robust search functionality enhances user navigation and accessibility. Users can quickly locate specific content, such as articles, posts, or user profiles, by entering relevant keywords or filters. This feature improves user satisfaction by facilitating effortless content discovery and retrieval.
+
+5. Tag Functionality: Implementing a tag system allows users to categorize and organize content effectively. Users can assign tags to their posts, articles, or other contributions, enabling easy classification based on topics, themes, or interests. This feature enhances content organization, promotes discoverability, and facilitates targeted content consumption for users.
 
 # Technologies Used
 
 ### Languages and Frameworks
-The following languages and frameworks were used to develop the website:
+The following languages, frameworks and databases were used to develop the website:
 - HTML
 - CSS
 - JavaScript
 - Python
 - Bootstrap
 - Django
+- Elephant SQL
+- Cloudinary
 
 ### Resources and Tools
 The following resources and tools were used to develop the website:
@@ -219,39 +155,9 @@ The following resources and tools were used to develop the website:
 - W3C Markup Validation Service
 - WAVE Web Accessibility Evaluation Tools
 
-# Testing Cases
+# Testing
 
-### User Stories
-
-Add table.
-
-### Functionalities Validation
-
-Thorough testing of this quiz has been undertaken to ensure that all of the buttons and functionality of the quiz work exactly as they have been intended to.
-
-- Landing Page
-
-- Register Page
-
-- Login Page
-
-- Forums Options Page
-
-- Forum Posts Page
-
-- Post Page
-
-- Profile Page
-
-- Bookmarks Page
-
-<details>
-<summary>Validation</summary>
-<br>
-
-![Validation](Validation Image)
-
-</details>
+I confirm that the website works as expected under the CRUD functionality for articles, profile and comments. 
 
 # HTML Validation
 
@@ -309,82 +215,6 @@ The project was validated using the provided CI Python Linter and it was cleared
 
 </details>
 
-### Lighthouse
-
-Lighthouse testing was carried out to test the performance, accessibility, best practices and SEO of the quiz.
-
-<details>
-<summary>index HTML Lighthouse</summary>
-<br>
-
-![index HTML Lighthouse]()
-
-</details>
-
-<details>
-<summary>404 Error HTML Validation</summary>
-<br>
-
-![404 Error HTML Lighthouse]()
-
-</details>
-
-### Accessibility
-
-The WAVE web accessibility evaluation tool by WebAIM was used to ensure the webpages met accessibility standards.
-
-<details>
-<summary>index HTML WAVE</summary>
-<br>
-
-![index HTML WAVE]()
-
-</details>
-
-<details>
-<summary>404 Error HTML Validation</summary>
-<br>
-
-![404 Error HTML WAVE]()
-
-</details>
-
-Responsive test on multiple devices.
-The following devices were used to ensure the site was responsive:
-
-- Ipad Pro
-- Galaxy S20
-- Macbook Pro
-- Iphone 13 Pro
-- Iphone 14 Pro Max
-- Notebook Acer Predator Helios 300
-
-# Bugs
-
-Bug: Unable to deploy due to error "ERROR: Could not build wheels for backports.zoneinfo, which is required to install pyproject.toml-based projects".
-<br>
-Fix: Update requirements.txt file from "backports.zoneinfo==0.2.1" to "backports.zoneinfo;python_version<"3.9"". Source: [stackoverflow](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta).
-
-Bug: Add bug.
-<br>
-Fix: Add fix.
-
-Bug: Add bug.
-<br>
-Fix: Add fix.
-
-Bug: Add bug.
-<br>
-Fix: Add fix.
-
-Bug: Add bug.
-<br>
-Fix: Add fix.
-
-Bug: Add bug.
-<br>
-Fix: Add fix.
-
 # Deployment
 
 [Click Here To See The Live Website](https://eire-settlers-9b0e3e0c192c.herokuapp.com/)
@@ -436,7 +266,6 @@ To contribute or check the code yourself, you can fork or clone the repository a
 
 A list of references and tutorials used for the site:
 
-* [Tutorial Name](Tutorial link)
 * GitHub Repositories
 * Hello Django Project
 * I Think Therefore I Blog
@@ -446,6 +275,6 @@ A list of references and tutorials used for the site:
 
 I would like to take this opportunity to acknowledge and thank the following people:
 
-- A big thank you for everybody on Code Institute's Slack Channels.
-- Jason, tutor from Code Institue. Thank you for the help.
-- A huge thank you to my team, GreenerToday, from September's hackathon, for inspiring me.
+- A big thank you to my therapist for helping me thrive.
+- A huge thank you to my husband for always being by my side.
+- An even bigger thank you to my puppy, Rio, who never leaves me alone.

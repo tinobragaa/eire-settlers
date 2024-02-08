@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <img src="{% static 'images/9284858.jpg' %}" alt="Banner Image" class="img-fluid">
+                <img src="{% static 'images/hero-image.jpg' %}" alt="Banner Image" class="img-fluid">
             </div>
             <div class="col-lg-6">
                 <div class="text-center text-black">
@@ -29,10 +29,10 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in article.image_preview.url %}
-                                <img class="card-img-top"
+                                <img class="card-img-top" alt="profile preview"
                                     src="https://i.imgur.com/Li7HO7j.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ article.image_preview.url }}">
+                                <img class="card-img-top" alt="Default image." src=" {{ article.image_preview.url }}">
                                 {% endif %}
                                 <a href="{% url 'article_detail' article.slug  %}" class="post-link">
                                     <h2 class="card-title">{{ article.title }}</h2>
