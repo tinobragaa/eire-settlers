@@ -19,38 +19,41 @@ To see the Epics List, click [here](https://github.com/tinobragaa/eire-settlers/
 
 To see the Kanban Board, click [here](https://github.com/users/tinobragaa/projects/3/views/1).
 
-### Project Setup and Planning:
+### Project Setup and Planning
 - As a developer, I want to create user stories for project planning using agile methodology so that I can efficiently plan and organize project requirements.
 - As a developer, I want to create a README file so that I can provide comprehensive information about the project, ensuring clarity and facilitating usage.
 - As a developer, I want to create a wireframe so that I can visualize the project's layout and design and have a clear reference for implementation.
-- As a Developer, I want to plan my database interactions so that I can effectively organize and structure my project.
+- As a developer, I want to plan my database interactions so that I can effectively organize and structure my project.
 - As a developer, I need to set up the base Django application so that we can build features.
+- As a developer, I need to deploy the application so that it is live for use.
+- As a developer, I need to create a 404 page so that users are redirected when entering a broken URL.
 
-### User Authentication and Profile Management:
-- As a user, I would like to be able to sign up, so that I can network with other users in the Eire Settlers community.
-- As a user, I want to be able to log in and out so that I can protect my personal information, create new articles, and interact with other users through likes, comments, and saving articles.
+### User Authentication and Profile Management
+- As a user, I would like to be able to sign up, so that I can network with other users in the Eire Settlers community. 
 - As a user, I need a profile where I can store info about me, my name, location, and nationality.
-- As a user, I would like to be able to edit my profile when I want to make changes to my details.
+- As a user, I would like to be able to edit my profile when I want to make changes to my details. 
 - As a user, I want to sign in with one of my social accounts so that I can sign in or sign up quickly and easily.
 - As a user, I want to be able to add friends so that I can expand my social connections within the website's community.
+- As a user, I want to be able to log in and out so that I can protect my personal information, create new articles, and interact with other users through likes, comments, and saving articles. 
 
-### Content Creation and Interaction:
-- As a developer, I need to create reusable resources so that further pages can be developed.
+### Content Creation and Interaction
 - As a user, I want to create an article so that I can share my thoughts or start discussions on topics of interest to me.
-- As a User, I want to be able to edit articles that I have previously published so that I can update and improve the content as needed.
-- As a User, I want to be able to create new comments, edit existing comments, and delete comments from articles so that I can engage with the content and express my thoughts effectively.
-- As a User, I want to be able to save articles that I find interesting or want to revisit late so that I can easily access and reference them at a later time.
+- As a user, I want to be able to edit articles that I have previously published so that I can update and improve the content as needed.
+- As a user, I want to be able to save articles that I find interesting or want to revisit late so that I can easily access and reference them at a later time. 
+- As a user, I want to be able to like comments posted by other users so that I can express appreciation or agreement with their contributions. 
 - As a user, I want to be able to report comments that I believe violate the site's community guidelines so that I can notify the administrators of inappropriate content for review and potential removal.
+- As a user, I want to be able to create new comments, edit existing comments, and delete comments from articles so that I can engage with the content and express my thoughts effectively.
+- As a developer, I need to create reusable resources so that further pages can be developed.
 
-### User Interface and Experience:
+### User Interface and Experience
 - As a user, I would like a responsive navigation menu so that I can easily navigate from any device.
-- As a developer, I need to style the allauth pages so that they fit with the theme styling.
 - As a user when I log in, I want to be able to access the latest articles so I am up to date with the user's discussions.
 - As a user, I would like the site to have a customized favicon so I can easily identify it when I have multiple tabs open.
 - As a user, I want to be able to search for content and profiles so that I can easily find relevant information and connect with others.
 - As a user, I want to be able to add tags to my content so that I can categorize it effectively and enhance its discoverability.
+- As a developer, I need to style the allauth pages so that they fit with the theme styling.
 
-### Accessibility and Responsiveness:
+### Accessibility and Responsiveness
 - As a developer, I want to ensure that the website is designed and developed with accessibility features so that users with disabilities can navigate and interact with the site effectively.
 - As a user, I can view and use the web app on all screen sizes so that I can change my device and access the app.
 - As a User, I want to have the option to enable and use dark mode in the application so that I can reduce eye strain and enhance readability in low-light environments.
@@ -148,7 +151,7 @@ GitHub Projects was utilized as an Agile tool for managing this project. This pl
 - User Stories: full list [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
 - Epics: full list [here](https://github.com/tinobragaa/eire-settlers/milestones).
 
-![Kanban Board](/documentation/)
+![Kanban Board](/static/images/documentation/kanban-board.jpg)
 
 ### GitHub Issues
 GitHub Issues functioned as an additional Agile tool for me. I employed my custom User Story Template within it to organize user stories effectively. Additionally, it facilitated tracking milestones (Epics) for the project.
