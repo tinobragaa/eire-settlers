@@ -10,7 +10,7 @@ During the evolution of this project, I've conducted a multitude of tests to ver
 
 The [HTML W3C Validator](https://validator.w3.org) was used to validate HTML files.
 
-| Page | W3C | Screenshot | Notes |
+| Page | Validator | Screenshot | Notes |
 | --- | --- | --- | --- |
 | Home | W3C | ![screenshot]() | Pass: No Errors |
 | All Articles | W3C | ![screenshot]() | Pass: No Errors |
@@ -32,7 +32,14 @@ The [HTML W3C Validator](https://validator.w3.org) was used to validate HTML fil
 
 The [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate CSS files.
 
-| File | Jigsaw URL | Screenshot | Notes |
+| File | Validator | Screenshot | Notes |
 | --- | --- | --- | --- |
 | style.css | Jigsaw | ![screenshot]() | Pass: No Errors |
 
+### JavaScript
+
+The [JShint Validator](https://jshint.com) was used to validate JS files.
+
+| File | Validator | Screenshot | Notes |
+| --- | --- | --- | --- |
+| script.js  | JShint | ![screenshot]() | Pass: No Errors |
