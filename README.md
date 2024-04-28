@@ -9,7 +9,7 @@ Eire Settlers is a dynamic full-stack Django project designed to cultivate a vib
 
 ## User Stories
 
-For the project's advancement, I generated user stories that detailed the essential tasks for achieving a well-constructed website. Following an agile development approach, I then categorized these user stories into 5 distinct EPICS on the Kanban board to manage the project's progression effectively.
+For the project's advancement, I generated 29 user stories that detailed the essential tasks for achieving a well-constructed website. Following an agile development approach, I then categorized these user stories into 5 distinct Epics on the Kanban board to manage the project's progression effectively.
 
 To see the User Stories list, click [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
 <br>
@@ -59,8 +59,7 @@ To see the Kanban Board, click [here](https://github.com/users/tinobragaa/projec
 - As a User, I want to have the option to enable and use dark mode in the application so that I can reduce eye strain and enhance readability in low-light environments.
 
 ## Design
-
-The website design adopts a friendly and pastel color scheme, strategically chosen to evoke a sense of warmth and approachability. Drawing from the principles of color psychology, our palette incorporates soft hues such as green, bege, blue, and turquoise. These pastel tones are known for their calming and uplifting effects, creating a visually pleasing environment that promotes a positive user experience.
+The project's design was inspired and created to envelop users in a friendly and inviting atmosphere, carefully selecting pastel hues to evoke warmth and approachability. Drawing from color psychology principles, soft tones like green, beige, blue, and turquoise were chosen for their calming and uplifting effects, ensuring a positive user experience. To convey credibility and refinement, the Protest Strike and Titillium fonts were meticulously selected, striking a balance between elegance and seriousness. This thoughtful combination instills confidence and reliability in users, fostering trust and engagement from the moment they land on the website.
 
 ### Typography
 Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and Titillium fonts to convey elegance and credibility. Titillium exudes a subtle sophistication with its clean lines and balanced proportions, while Protest Strike adds a touch of gravitas with its sturdy and authoritative appearance. This carefully curated combination strikes a harmonious balance between elegance and seriousness, instilling confidence and reliability in the users. 
@@ -68,11 +67,12 @@ Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and 
 ![Typography](/static/images/documentation/typography.jpg)
 
 ### Colour Scheme
+The website colour scheme adopts a friendly and pastel color scheme, strategically chosen to evoke a sense of warmth and approachability. Drawing from the principles of color psychology, our palette incorporates soft hues such as green, bege, blue, and turquoise. These pastel tones are known for their calming and uplifting effects, creating a visually pleasing environment that promotes a positive user experience.
 
 ![Colour Palette](/static/images/documentation/color-palette.jpg)
 
 ### Imagery
-
+In imagery, I've chosed a captivating centerpiece to resonate with the website's mission of fostering community among immigrants. The main illustration, sourced from [Pexels](https://www.pexels.com/), portrays a diverse array of individuals connecting and interacting harmoniously. Through vibrant depictions of shared experiences and cultural diversity, this illustration beautifully encapsulates the essence of the platform's goal—to unite immigrants and create a supportive, inclusive community. 
 
 ## Wireframes
 
@@ -141,7 +141,7 @@ Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and 
 ## Database Design
 I utilized [dbdiagram](https://dbdiagram.io/home) to create an entity relationship diagram, offering a clear visualization of the interconnections among my data structures. This streamlined the development process by offering a comprehensive visualization.
 
-![Database Design](/documentation/database-design.png)
+![Database Design](/static/images/documentation/)
 
 ## Agile Development
 
