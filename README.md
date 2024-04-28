@@ -141,7 +141,68 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 ## Database Design
 I utilized [dbdiagram](https://dbdiagram.io/home) to create an entity relationship diagram, offering a clear visualization of the interconnections among my data structures. This streamlined the development process by offering a comprehensive visualization.
 
-![Database Design](/static/images/documentation/)
+![Database Design](/static/images/documentation/database-schema.jpg)
+
+### UserAllAuth Model
+- The user model is the default Django user model.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| id | IntegerField | |
+| password | CharField |  |
+| last_login | DateTimeField |  |
+| is_superuser | BooleanField |  |
+| username | CharField | max_length=150, unique=True |
+| first_name | CharField | max_length=150, blank=True |
+| last_name | CharField | max_length=150, blank=True |
+| email | EmailField | max_length=254, unique=True |
+| is_staff | BooleanField |  |
+| is_active | BooleanField |  |
+| date_joined | DateTimeField |  |
+
+### User Model
+-  User model is connected to the UserAllAuth model with OneToOneField. This model is used to store extra user information.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| user | OneToOneField | User, on_delete=models.CASCADE |
+| first_name | CharField | max_length=50, null=True, blank=True |
+| last_name | CharField | max_length=50, null=True, blank=True |
+| location | CharField | max_length=100, null=True, blank=True |
+| email | EmailField | max_length=100, null=True, blank=True |
+| bio | TextField | max_length=500, null=True, blank=True |
+| user_image | ResizedImageField | upload_to='users/', null=True, force_format='WEBP', quality=85, blank=True, default='users/default_user.webp' |
+| created | DateTimeField | auto_now_add=True |
+
+### Article Model
+- The Article model is used to store all the articles uploaded by users.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| title | CharField | max_length=100, null=True |
+| body | TextField | upload_to='memes/', null=True, force_format='WEBP', quality=85, blank=True, default='memes/default.webp |
+| user_id | Integer | User |
+| created | DateTimeField | auto_now_add=True |
+
+### Comment Model
+- The Comment model is used to store all the comments on the articles.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| user | ForeignKey | UserProfile, on_delete=models.CASCADE, null=True, blank=True |
+| comment | TextField | max_length=500 |
+| created | DateTimeField | auto_now_add=True |
+| article | ForeignKey | Meme, on_delete=models.CASCADE, related_name='comment' |
+
+### Tag Model
+- The tag model is used to store all the tags for the articles.
+
+| key | Field Type | Validation |
+| --- | --- | --- |
+| name | CharField | max_length=20, null=True, blank=True |
+| created | DateTimeField | auto_now_add=True |
+| id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
+
 
 ## Agile Development
 
@@ -173,7 +234,7 @@ I broke down my Epics into individual stories before prioritizing and implementi
 - **Won't Have**: not a priority for this iteration
 
 ## Future Features
-A few features that could make the website even better are listed here. These features have been logged as Future Release in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
+A few features that could make the website even better are listed here. These features have been logged as "Future Release" in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
 
 - **Dark Mode**
   - Introducing a dark mode option can enhance user experience by reducing eye strain and making the website more visually appealing in low-light environments. Users can switch between light and dark modes based on their preference.
@@ -209,6 +270,7 @@ The following resources and tools were used to develop the website:
 - [GitPod](https://www.gitpod.io/) - Used to commit, comment and push code during the development process.
 - [Font Awesome](https://fontawesome.com/) - Used to source necessary icons used in the project.
 - [Behance](https://www.behance.net/) - Used to research design trends.
+- [Pexels](https://www.pexels.com/) - Used to search for images to use on the website.
 - [Figma](https://www.figma.com/) - Used to create wireframes and website structure map for the project.
 - [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) - Used to design the store's mockups and placeholders. 
 - [Gramarly](https://app.grammarly.com/) - Used for general spell-check.
