@@ -9,7 +9,7 @@ Eire Settlers is a dynamic full-stack Django project designed to cultivate a vib
 
 ## User Stories
 
-For the project's advancement, I generated user stories that detailed the essential tasks for achieving a well-constructed website. Following an agile development approach, I then categorized these user stories into six distinct epics on the Kanban board to manage the project's progression effectively.
+For the project's advancement, I generated user stories that detailed the essential tasks for achieving a well-constructed website. Following an agile development approach, I then categorized these user stories into 5 distinct EPICS on the Kanban board to manage the project's progression effectively.
 
 To see the User Stories list, click [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
 <br>
@@ -19,6 +19,42 @@ To see the Epics List, click [here](https://github.com/tinobragaa/eire-settlers/
 
 To see the Kanban Board, click [here](https://github.com/users/tinobragaa/projects/3/views/1).
 
+### Project Setup and Planning:
+- As a developer, I want to create user stories for project planning using agile methodology so that I can efficiently plan and organize project requirements.
+- As a developer, I want to create a README file so that I can provide comprehensive information about the project, ensuring clarity and facilitating usage.
+- As a developer, I want to create a wireframe so that I can visualize the project's layout and design and have a clear reference for implementation.
+- As a Developer, I want to plan my database interactions so that I can effectively organize and structure my project.
+- As a developer, I need to set up the base Django application so that we can build features.
+
+### User Authentication and Profile Management:
+- As a user, I would like to be able to sign up, so that I can network with other users in the Eire Settlers community.
+- As a user, I want to be able to log in and out so that I can protect my personal information, create new articles, and interact with other users through likes, comments, and saving articles.
+- As a user, I need a profile where I can store info about me, my name, location, and nationality.
+- As a user, I would like to be able to edit my profile when I want to make changes to my details.
+- As a user, I want to sign in with one of my social accounts so that I can sign in or sign up quickly and easily.
+- As a user, I want to be able to add friends so that I can expand my social connections within the website's community.
+
+### Content Creation and Interaction:
+- As a developer, I need to create reusable resources so that further pages can be developed.
+- As a user, I want to create an article so that I can share my thoughts or start discussions on topics of interest to me.
+- As a User, I want to be able to edit articles that I have previously published so that I can update and improve the content as needed.
+- As a User, I want to be able to create new comments, edit existing comments, and delete comments from articles so that I can engage with the content and express my thoughts effectively.
+- As a User, I want to be able to save articles that I find interesting or want to revisit late so that I can easily access and reference them at a later time.
+- As a user, I want to be able to report comments that I believe violate the site's community guidelines so that I can notify the administrators of inappropriate content for review and potential removal.
+
+### User Interface and Experience:
+- As a user, I would like a responsive navigation menu so that I can easily navigate from any device.
+- As a developer, I need to style the allauth pages so that they fit with the theme styling.
+- As a user when I log in, I want to be able to access the latest articles so I am up to date with the user's discussions.
+- As a user, I would like the site to have a customized favicon so I can easily identify it when I have multiple tabs open.
+- As a user, I want to be able to search for content and profiles so that I can easily find relevant information and connect with others.
+- As a user, I want to be able to add tags to my content so that I can categorize it effectively and enhance its discoverability.
+
+### Accessibility and Responsiveness:
+- As a developer, I want to ensure that the website is designed and developed with accessibility features so that users with disabilities can navigate and interact with the site effectively.
+- As a user, I can view and use the web app on all screen sizes so that I can change my device and access the app.
+- As a User, I want to have the option to enable and use dark mode in the application so that I can reduce eye strain and enhance readability in low-light environments.
+
 ## Design
 
 The website design adopts a friendly and pastel color scheme, strategically chosen to evoke a sense of warmth and approachability. Drawing from the principles of color psychology, our palette incorporates soft hues such as green, bege, blue, and turquoise. These pastel tones are known for their calming and uplifting effects, creating a visually pleasing environment that promotes a positive user experience.
@@ -26,23 +62,11 @@ The website design adopts a friendly and pastel color scheme, strategically chos
 ### Typography
 Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and Titillium fonts to convey elegance and credibility. Titillium exudes a subtle sophistication with its clean lines and balanced proportions, while Protest Strike adds a touch of gravitas with its sturdy and authoritative appearance. This carefully curated combination strikes a harmonious balance between elegance and seriousness, instilling confidence and reliability in the users. 
 
-<details>
-<summary>Typography</summary>
-<br>
-
 ![Typography](/static/images/documentation/typography.jpg)
-
-</details>
 
 ### Colour Scheme
 
-<details>
-<summary>Colour Palette</summary>
-<br>
-
 ![Colour Palette](/static/images/documentation/color-palette.jpg)
-
-</details>
 
 ### Imagery
 
@@ -122,7 +146,7 @@ I utilized [dbdiagram](https://dbdiagram.io/home) to create an entity relationsh
 GitHub Projects was utilized as an Agile tool for managing this project. This platform facilitated the planning and tracking of user stories, issues, and epics, which were then monitored on a weekly basis using a basic Kanban board setup.
 
 - User Stories: full list [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
-- Epics: full list [here](https://github.com/tinobragaa/eire-settlers/milestones)..
+- Epics: full list [here](https://github.com/tinobragaa/eire-settlers/milestones).
 
 ![Kanban Board](/documentation/)
 
@@ -146,13 +170,13 @@ I broke down my Epics into individual stories before prioritizing and implementi
 - **Won't Have**: not a priority for this iteration
 
 ## Future Features
-This is a project I want to revisit in the future and add some extra features to. These features have been logged as Won't Have in my MoSCoW prioritization.
+A few features that could make the website even better are listed here. These features have been logged as Future Release in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
 
 - **Dark Mode**
   - Introducing a dark mode option can enhance user experience by reducing eye strain and making the website more visually appealing in low-light environments. Users can switch between light and dark modes based on their preference.
 
-- **Admin Panel**
-  - Implementing an admin panel empowers website administrators with comprehensive control over site operations. Admins can manage user accounts, moderate content, analyze website performance, and perform other essential tasks efficiently from a centralized dashboard.
+- **Social Media Login**
+  - Enabling social media login functionality allows users to sign in to the platform using their existing social media accounts, such as Facebook, Twitter, or Google. This feature simplifies the registration and login process, saving users time and effort. Additionally, it enhances user convenience by eliminating the need to remember separate login credentials for the platform.
 
 - **Add Friend Functionality**
   - Incorporating an "Add Friend" feature enables users to expand their social connections within the website's community. Users can send friend requests to others, fostering interaction and engagement. This feature enhances the social aspect of the platform and encourages networking among users.
