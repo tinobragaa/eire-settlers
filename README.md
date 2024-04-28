@@ -3,7 +3,7 @@
 
 Eire Settlers is a dynamic full-stack Django project designed to cultivate a vibrant community for immigrants relocating to Ireland. This project's purpose is to empower newcomers with essential information and establish a supportive network. Serving as a comprehensive platform, Eire Settlers enables individuals to share insights, experiences, and valuable advice on various aspects of settling in Ireland. Inspired by the active engagement of the Brazilian community on Facebook groups, Eire Settlers has evolved into a dedicated platform aimed at enhancing this concept. Drawing from the collaborative spirit observed within online communities, the goal is to provide a structured and inclusive space where immigrants from all backgrounds can come together to exchange knowledge, seek guidance, and forge meaningful connections as they embark on their journey to Ireland.
 
-![Mockup image](/static/images/documentation/mockup.jpg)
+![Mockup image](/docs/mockup.jpg)
 
 [Live Website](https://eire-settlers-9b0e3e0c192c.herokuapp.com/)
 
@@ -64,12 +64,12 @@ The project's design was inspired and created to envelop users in a friendly and
 ### Typography
 Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and Titillium fonts to convey elegance and credibility. Titillium exudes a subtle sophistication with its clean lines and balanced proportions, while Protest Strike adds a touch of gravitas with its sturdy and authoritative appearance. This carefully curated combination strikes a harmonious balance between elegance and seriousness, instilling confidence and reliability in the users. 
 
-![Typography](/static/images/documentation/typography.jpg)
+![Typography](/docs/typography.jpg)
 
 ### Colour Scheme
 The website colour scheme adopts a friendly and pastel color scheme, strategically chosen to evoke a sense of warmth and approachability. Drawing from the principles of color psychology, our palette incorporates soft hues such as green, bege, blue, and turquoise. These pastel tones are known for their calming and uplifting effects, creating a visually pleasing environment that promotes a positive user experience.
 
-![Colour Palette](/static/images/documentation/color-palette.jpg)
+![Colour Palette](/docs/color-palette.jpg)
 
 ### Imagery
 In imagery, I've chosed a captivating centerpiece to resonate with the website's mission of fostering community among immigrants. The main illustration, sourced from [Pexels](https://www.pexels.com/), portrays a diverse array of individuals connecting and interacting harmoniously. Through vibrant depictions of shared experiences and cultural diversity, this illustration beautifully encapsulates the essence of the platform's goal—to unite immigrants and create a supportive, inclusive community. 
@@ -80,7 +80,7 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 <summary>Landing Page</summary>
 <br>
 
-![Landing Page](/static/images/documentation/wireframes/first-version/landing-page.jpg)
+![Landing Page](/docs/wireframes/landing-page.jpg)
 
 </details>
 
@@ -88,7 +88,7 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 <summary>Sign In</summary>
 <br>
 
-![Sign In](/static/images/documentation/wireframes/first-version/sign-in.jpg)
+![Sign In](/docs/wireframes/sign-in.jpg)
 
 </details>
 
@@ -96,7 +96,7 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 <summary>Sign Up</summary>
 <br>
 
-![Sign Up](/static/images/documentation/wireframes/first-version/sign-up.jpg)
+![Sign Up](/docs/wireframes/sign-up.jpg)
 
 </details>
 
@@ -104,7 +104,7 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 <summary>Groups</summary>
 <br>
 
-![Groups](/static/images/documentation/wireframes/first-version/group-selection.jpg)
+![Groups](/docs/wireframes/group-selection.jpg)
 
 </details>
 
@@ -112,7 +112,7 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 <summary>Articles Interface</summary>
 <br>
 
-![Articles Interface](/static/images/documentation/wireframes/first-version/articles-view.jpg)
+![Articles Interface](/docs/wireframes/articles-view.jpg)
 
 </details>
 
@@ -120,7 +120,7 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 <summary>Article Details</summary>
 <br>
 
-![Articles Details](/static/images/documentation/wireframes/first-version/article-detail.jpg)
+![Articles Details](/docs/wireframes/article-detail.jpg)
 
 </details>
 
@@ -141,7 +141,7 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 ## Database Design
 I utilized [dbdiagram](https://dbdiagram.io/home) to create an entity relationship diagram, offering a clear visualization of the interconnections among my data structures. This streamlined the development process by offering a comprehensive visualization.
 
-![Database Design](/static/images/documentation/database-schema.jpg)
+![Database Design](/docs/database-schema.jpg)
 
 ### UserAllAuth Model
 - The user model is the default Django user model.
@@ -211,7 +211,7 @@ GitHub Projects was utilized as an Agile tool for managing this project. This pl
 - User Stories: full list [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
 - Epics: full list [here](https://github.com/tinobragaa/eire-settlers/milestones).
 
-![Kanban Board](/static/images/documentation/kanban-board.jpg)
+![Kanban Board](/docs/kanban-board.jpg)
 
 ### GitHub Issues
 GitHub Issues functioned as an additional Agile tool for me. I employed my custom User Story Template within it to organize user stories effectively. Additionally, it facilitated tracking milestones (Epics) for the project.

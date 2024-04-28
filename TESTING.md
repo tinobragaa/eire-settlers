@@ -34,7 +34,7 @@ The [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to vali
 
 | File | Validator | Screenshot | Notes |
 | --- | --- | --- | --- |
-| style.css | Jigsaw | ![screenshot]() | Pass: No Errors |
+| style.css | Jigsaw | ![screenshot](/docs/testing/css-validation.jpg) | Pass: No Errors |
 
 ### JavaScript
 
@@ -42,4 +42,4 @@ The [JShint Validator](https://jshint.com) was used to validate JS files.
 
 | File | Validator | Screenshot | Notes |
 | --- | --- | --- | --- |
-| script.js  | JShint | ![screenshot]() | Pass: No Errors |
+| script.js  | JShint | ![screenshot](/docs/testing/js-validation.jpg) | Undefined variable Bootstrap |
