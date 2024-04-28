@@ -203,7 +203,6 @@ I utilized [dbdiagram](https://dbdiagram.io/home) to create an entity relationsh
 | created | DateTimeField | auto_now_add=True |
 | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False |
 
-
 ## Agile Development
 
 ### GitHub Projects
@@ -255,7 +254,6 @@ A few features that could make the website even better are listed here. These fe
 
 ### Languages and Frameworks
 This project was created using the following languages and frameworks:
-
 - [HTML](https://en.wikipedia.org/wiki/HTML) as the markup language and templating language.
 - [CSS](https://en.wikipedia.org/wiki/CSS) as the style sheet language.
   - [Bootstrap](https://getbootstrap.com/) as the CSS framework.
@@ -372,7 +370,8 @@ You can clone the repository by following these steps:
 ## Credits
 A list of references and tutorials used for the site:
 
-* The development process relied on The Code Institute's "Boutique Ado" and "I Think Therefore I Blog" walkthrough projects.
+* The development process relied on The Code Institute's "Hello Django", "Boutique Ado" and "I Think Therefore I Blog" walkthrough projects.
+* Stack Overflow, CI Slack and Google was used for countless research into code functionalities and problem solving.
 * The developer leveraged their past projects, including [Mil's Kitchen](https://tinobragaa.github.io/mils-kitchen/) (GitHub repository [here](https://github.com/tinobragaa/mils-kitchen)), [codit Quiz - Your JavaScript Quiz](https://tinobragaa.github.io/codit-quiz/) (GitHub repository [here](https://github.com/tinobragaa/codit-quiz)), [Password Creator](https://password-creatorr.herokuapp.com/) (GitHub repository [here](https://github.com/tinobragaa/password-creator)), and [HefestusCave](https://eire-settlers-9b0e3e0c192c.herokuapp.com/) (GitHub repository [here](https://github.com/tinobragaa/eire-settlers)), as primary references for accessing code solutions and CSS, as well as for README documentation purposes.
 
 ## Acknowledgements

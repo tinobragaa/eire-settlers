@@ -1,25 +1,38 @@
-I confirm that the website works as expected under the CRUD functionality for articles, profile and comments. 
+# Testing
 
-# HTML Validation
+Return back to the [README.md](README.md) file.
 
-The Nu HTML Checker (W3C) is used to validate HTML documents. The files passed without any errors.
+During the evolution of this project, I've conducted a multitude of tests to verify the functionality of the site. Within this section, you'll discover comprehensive documentation detailing every test performed across the site.
 
-<details>
-<summary>HTML Validation</summary>
-<br>
+## Validation
 
-![index HTML Validation](/static/images/documentation/html-validation.jpg)
+### HTML
 
-</details>
+The [HTML W3C Validator](https://validator.w3.org) was used to validate HTML files.
 
-# CSS Validation
+| Page | W3C | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | W3C | ![screenshot]() | Pass: No Errors |
+| All Articles | W3C | ![screenshot]() | Pass: No Errors |
+| Individual Article | W3C | ![screenshot]() | Pass: No Errors |
+| Create Article | W3C | ![screenshot]() | Pass: No Errors |
+| Edit Article | W3C | ![screenshot]() | Pass: No Errors |
+| Remove Article | W3C | ![screenshot]() | Pass: No Errors |
+| Edit Comment | W3C | ![screenshot]() | Pass: No Errors |
+| Delete Comment | W3C | ![screenshot]() | Pass: No Errors |
+| View Profile | W3C | ![screenshot]() | Pass: No Errors |
+| Edit Profile | W3C | ![screenshot]() | Pass: No Errors |
+| Remove Profile | W3C | ![screenshot]() | Pass: No Errors |
+| Sign In | W3C | ![screenshot]() | Pass: No Errors |
+| Sign Out | W3C | ![screenshot]() | Pass: No Errors |
+| Sign Up | W3C | ![screenshot]() | Pass: No Errors |
+| Password Reset | W3C | ![screenshot]() | Pass: No Errors |
 
-The W3C Jigsaw CSS Validation Service is used to validate CSS documents. The file passed without any errors.
+### CSS
 
-<details>
-<summary>CSS Validation</summary>
-<br>
+The [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate CSS files.
 
-![CSS Validation](/static/images/documentation/css-validation.jpg)
+| File | Jigsaw URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| style.css | Jigsaw | ![screenshot]() | Pass: No Errors |
 
-</details>
