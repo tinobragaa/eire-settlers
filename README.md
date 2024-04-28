@@ -7,11 +7,47 @@ Eire Settlers is a dynamic full-stack Django project designed to cultivate a vib
 
 [Live Website](https://eire-settlers-9b0e3e0c192c.herokuapp.com/)
 
-# User Stories
+## User Stories
 
-[Kanban Board](https://github.com/users/tinobragaa/projects/3)
+For the project's advancement, I generated user stories that detailed the essential tasks for achieving a well-constructed website. Following an agile development approach, I then categorized these user stories into six distinct epics on the Kanban board to manage the project's progression effectively.
 
-# Wireframes
+To see the User Stories list, click [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
+<br>
+
+To see the Epics List, click [here](https://github.com/tinobragaa/eire-settlers/milestones).
+<br>
+
+To see the Kanban Board, click [here](https://github.com/users/tinobragaa/projects/3/views/1).
+
+## Design
+
+The website design adopts a friendly and pastel color scheme, strategically chosen to evoke a sense of warmth and approachability. Drawing from the principles of color psychology, our palette incorporates soft hues such as green, bege, blue, and turquoise. These pastel tones are known for their calming and uplifting effects, creating a visually pleasing environment that promotes a positive user experience.
+
+### Typography
+Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and Titillium fonts to convey elegance and credibility. Titillium exudes a subtle sophistication with its clean lines and balanced proportions, while Protest Strike adds a touch of gravitas with its sturdy and authoritative appearance. This carefully curated combination strikes a harmonious balance between elegance and seriousness, instilling confidence and reliability in the users. 
+
+<details>
+<summary>Typography</summary>
+<br>
+
+![Typography](/static/images/documentation/typography.jpg)
+
+</details>
+
+### Colour Scheme
+
+<details>
+<summary>Colour Palette</summary>
+<br>
+
+![Colour Palette](/static/images/documentation/color-palette.jpg)
+
+</details>
+
+### Imagery
+
+
+## Wireframes
 
 <details>
 <summary>Landing Page</summary>
@@ -61,185 +97,198 @@ Eire Settlers is a dynamic full-stack Django project designed to cultivate a vib
 
 </details>
 
-# Design
+## Features 
 
-The website design adopts a friendly and pastel color scheme, strategically chosen to evoke a sense of warmth and approachability. Drawing from the principles of color psychology, our palette incorporates soft hues such as green, bege, blue, and turquoise. These pastel tones are known for their calming and uplifting effects, creating a visually pleasing environment that promotes a positive user experience.
-
-## Typography/Colour Palette
-
-Introducing a refined and trustworthy aesthetic, I chose the Protest Strike and Titillium fonts to convey elegance and credibility. Titillium exudes a subtle sophistication with its clean lines and balanced proportions, while Protest Strike adds a touch of gravitas with its sturdy and authoritative appearance. This carefully curated combination strikes a harmonious balance between elegance and seriousness, instilling confidence and reliability in the users. 
-
+### Homepage
+- 
+-
+-
 <details>
-<summary>Typography</summary>
+<summary>Homepage</summary>
 <br>
 
-![Typography](/static/images/documentation/typography.jpg)
+![Homepage]()
 
 </details>
 
-<details>
-<summary>Colour Palette</summary>
+## Database Design
+I utilized [dbdiagram](https://dbdiagram.io/home) to create an entity relationship diagram, offering a clear visualization of the interconnections among my data structures. This streamlined the development process by offering a comprehensive visualization.
+
+![Database Design](/documentation/database-design.png)
+
+## Agile Development
+
+### GitHub Projects
+GitHub Projects was utilized as an Agile tool for managing this project. This platform facilitated the planning and tracking of user stories, issues, and epics, which were then monitored on a weekly basis using a basic Kanban board setup.
+
+- User Stories: full list [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
+- Epics: full list [here](https://github.com/tinobragaa/eire-settlers/milestones)..
+
+![Kanban Board](/documentation/)
+
+### GitHub Issues
+GitHub Issues functioned as an additional Agile tool for me. I employed my custom User Story Template within it to organize user stories effectively. Additionally, it facilitated tracking milestones (Epics) for the project.
+
+To see the User Stories list, click [here](https://github.com/tinobragaa/eire-settlers/issues?q=is%3Aissue+sort%3Acreated-asc+).
 <br>
 
-![Colour Palette](/static/images/documentation/color-palette.jpg)
+To see the Epics List, click [here](https://github.com/tinobragaa/eire-settlers/milestones).
+<br>
 
-</details>
+To see the Kanban Board, click [here](https://github.com/users/tinobragaa/projects/3/views/1).
 
-# Features
+### MoSCoW Prioritization
+I broke down my Epics into individual stories before prioritizing and implementing them. This method allowed me to utilize the MoSCoW prioritization and apply labels to the user stories in the Issues tab.
 
-- Profile: Users can view their profile containing information such as username, profile picture, bio, and activity history.
-- Edit Profile: Users can modify their profile information, including username, profile picture, and bio.
-- Remove Profile: Users can opt to delete their profile permanently from the platform.
-- Sign In/Sign Up: Users can log in to their existing accounts or create new accounts to access the platform's features.
-- Register: New users can sign up for an account on the platform by providing necessary information such as email, username, and password.
-- Like/Dislike: Users can express their preference for articles or comments by liking or disliking them.
-- Save Articles: Users can bookmark articles they find interesting to access them later.
-- Unsave Articles: Users can remove saved articles from their bookmarked list.
-- Comment: Users can post comments on articles to share their thoughts or engage in discussions.
-- Report Comment: Users can report inappropriate or abusive comments to the platform administrators.
-- Edit Comment: Users can make changes to their own comments after posting them.
-- Delete Comment: Users can delete their own comments if they wish to remove them from the platform.
-- Create Article: Users can compose and publish new articles on the platform.
-- Edit Article: Authors can make revisions to their published articles.
-- Delete Article: Authors can remove their articles from the platform if needed.
-- Hamburger Menu: The menu provides quick access to various features, including saved articles and articles created by the user.
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
 
-# Future Features
+## Future Features
+This is a project I want to revisit in the future and add some extra features to. These features have been logged as Won't Have in my MoSCoW prioritization.
 
-A few features that could make the website even better are listed here:
+- **Dark Mode**
+  - Introducing a dark mode option can enhance user experience by reducing eye strain and making the website more visually appealing in low-light environments. Users can switch between light and dark modes based on their preference.
 
-1. Dark Mode: Introducing a dark mode option can enhance user experience by reducing eye strain and making the website more visually appealing in low-light environments. Users can switch between light and dark modes based on their preference.
+- **Admin Panel**
+  - Implementing an admin panel empowers website administrators with comprehensive control over site operations. Admins can manage user accounts, moderate content, analyze website performance, and perform other essential tasks efficiently from a centralized dashboard.
 
-2. Admin Panel: Implementing an admin panel empowers website administrators with comprehensive control over site operations. Admins can manage user accounts, moderate content, analyze website performance, and perform other essential tasks efficiently from a centralized dashboard.
+- **Add Friend Functionality**
+  - Incorporating an "Add Friend" feature enables users to expand their social connections within the website's community. Users can send friend requests to others, fostering interaction and engagement. This feature enhances the social aspect of the platform and encourages networking among users.
 
-3. Add Friend Functionality: Incorporating an "Add Friend" feature enables users to expand their social connections within the website's community. Users can send friend requests to others, fostering interaction and engagement. This feature enhances the social aspect of the platform and encourages networking among users.
+- **Search Functionality**
+  - Integrating a robust search functionality enhances user navigation and accessibility. Users can quickly locate specific content, such as articles, posts, or user profiles, by entering relevant keywords or filters. This feature improves user satisfaction by facilitating effortless content discovery and retrieval.
 
-4. Search Functionality: Integrating a robust search functionality enhances user navigation and accessibility. Users can quickly locate specific content, such as articles, posts, or user profiles, by entering relevant keywords or filters. This feature improves user satisfaction by facilitating effortless content discovery and retrieval.
+- **Tag Functionality**
+  - Implementing a tag system allows users to categorize and organize content effectively. Users can assign tags to their posts, articles, or other contributions, enabling easy classification based on topics, themes, or interests. This feature enhances content organization, promotes discoverability, and facilitates targeted content consumption for users.
 
-5. Tag Functionality: Implementing a tag system allows users to categorize and organize content effectively. Users can assign tags to their posts, articles, or other contributions, enabling easy classification based on topics, themes, or interests. This feature enhances content organization, promotes discoverability, and facilitates targeted content consumption for users.
-
-# Technologies Used
+## Technologies Used
 
 ### Languages and Frameworks
-The following languages, frameworks and databases were used to develop the website:
-- HTML
-- CSS
-- JavaScript
-- Python
-- Bootstrap
-- Django
-- Elephant SQL
-- Cloudinary
+This project was created using the following languages and frameworks:
+
+- [HTML](https://en.wikipedia.org/wiki/HTML) as the markup language and templating language.
+- [CSS](https://en.wikipedia.org/wiki/CSS) as the style sheet language.
+  - [Bootstrap](https://getbootstrap.com/) as the CSS framework.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) to create carousel on index.html.
+  - [jQuery](https://jquery.com/) to simplify DOM manipulation.
+- [Python](https://www.python.org/) as the backend programming language.
+  - [Django](https://www.djangoproject.com/) as the Python web framework.
 
 ### Resources and Tools
 The following resources and tools were used to develop the website:
-- Git
-- Figma
-- Github
-- Gitpod
-- Favicon
-- DevTools
-- W3 Schools
-- Codecademy
-- Google Fonts
-- Font Awesome
-- Stack Overflow
-- Tables Generator
-- Adobe Photoshop 2023
-- Techsini Mockup Generator
-- GitHub Wiki TOC generator
-- W3C CSS Validation Service
-- W3C Markup Validation Service
-- WAVE Web Accessibility Evaluation Tools
+- [GitHub](https://github.com/) - Source code hosted on GitHub, deployed using Git Pages.
+- [GitPod](https://www.gitpod.io/) - Used to commit, comment and push code during the development process.
+- [Font Awesome](https://fontawesome.com/) - Used to source necessary icons used in the project.
+- [Behance](https://www.behance.net/) - Used to research design trends.
+- [Figma](https://www.figma.com/) - Used to create wireframes and website structure map for the project.
+- [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) - Used to design the store's mockups and placeholders. 
+- [Gramarly](https://app.grammarly.com/) - Used for general spell-check.
+- [Google Fonts](https://fonts.google.com/) - Used to import fonts to the project.
+- [Heroku](https://www.heroku.com/) - Used to deploy the project.
+- [dbdiagram](https://dbdiagram.io/home) - Used to make the database design.
+- [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create the website mockup.
+- [TOC](https://ecotrust-canada.github.io/markdown-toc/) - Used to create the TOC of this file.
+- [ElephantSQL](https://www.elephantsql.com/) - Free and open-source relational database management system (RDBMS).
+- [Bootstrap](https://getbootstrap.com/) - Used for adding predefined styled elements and creating responsiveness.
+- [JsHint](https://jshint.com/) - Used for validating the javascript code.
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used for validating the python code.
+- [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) - Used for validating the HTML.
+- [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) - Used for validating the CSS.
+- [Chrome Del Tools](https://developer.chrome.com/docs/devtools/) - For debugging the project.
+- [W.A.V.E.](https://wave.webaim.org/) - Used for testing accessibility.
+- [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used for testing performance.
+- [Stack Overflow](https://stackoverflow.com/) - Used for finding solutions to coding issues and asking programming-related questions.
 
-# Testing
+### Django and Python Packages
+The following Django applications and Python Packages were used to develop the website:
+- [asgiref](https://pypi.org/project/asgiref/) - ASGI (Asynchronous Server Gateway Interface) framework, a standard interface between web servers and Python web applications.
+- [dj-database-url](https://pypi.org/project/dj-database-url/) - A utility for utilizing database URLs in Django applications.
+- [Django](https://www.djangoproject.com/) - A Python-based web framework that follows the model-template-view architectural pattern, used for building the project.
+- [django-allauth](https://django-allauth.readthedocs.io/) - A Django application used for account registration, management, and authentication.
+- [django-crispy-forms](https://pypi.org/project/django-crispy-forms/) - A Django application that makes it easy to style Django forms.
+- [django-resized](https://pypi.org/project/django-resized/) - A Django application to resize and convert images.
+- [gunicorn](https://pypi.org/project/gunicorn/) - A Python Web Server Gateway Interface (WSGI) HTTP server.
+- [oauthlib](https://pypi.org/project/oauthlib/) - A generic and reusable Python library for implementing OAuth1 and OAuth2 providers.
+- [Pillow](https://pypi.org/project/Pillow/) - The Python Imaging Library adds image processing capabilities to your Python interpreter.
+- [psycopg2](https://pypi.org/project/psycopg2/) - A PostgreSQL adapter for Python.
+- [python3-openid](https://pypi.org/project/python3-openid/) - A set of Python packages for implementing OpenID Connect.
+- [requests-oauthlib](https://pypi.org/project/requests-oauthlib/) - OAuthlib authentication support for Requests.
+- [sqlparse](https://pypi.org/project/sqlparse/) - A non-validating SQL parser module for Python.
+- [urllib3](https://pypi.org/project/urllib3/) - A powerful HTTP client for Python, which provides features such as connection pooling, request retries, and more.
+- [whitenoise](https://pypi.org/project/whitenoise/) - Whitenoise serves its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. 
 
-I confirm that the website works as expected under the CRUD functionality for articles, profile and comments. 
+## Testing
+For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
-# HTML Validation
-
-The Nu HTML Checker (W3C) is used to validate HTML documents. The files passed without any errors.
-
-<details>
-<summary>HTML Validation</summary>
-<br>
-
-![index HTML Validation](/static/images/documentation/html-validation.jpg)
-
-</details>
-
-# CSS Validation
-
-The W3C Jigsaw CSS Validation Service is used to validate CSS documents. The file passed without any errors.
-
-<details>
-<summary>CSS Validation</summary>
-<br>
-
-![CSS Validation](/static/images/documentation/css-validation.jpg)
-
-</details>
-
-# Deployment
-
+## Deployment
 [Click Here To See The Live Website](https://eire-settlers-9b0e3e0c192c.herokuapp.com/)
 
-### Deploy
-The website was deployed through the use of GitHub Pages, a feature built in to GitHub. This can be done by following the steps below.
-1. In the desired repository, click on "Settings" from the top menu.
-2. From the side menu to your left, select "Pages" in the "Code and automation" section.
-3. Make sure the "Source" option is set to "Deploy from a branch"
-4. Select the desired "Branch" from the drop down below (main branch in most cases, making sure the director is set to /(root)).
-5. Select "Save", and after it refreshes the page, you will see a box at the top of the page providing you with the URL of your now published site.
+### ElephantSQL Database
+This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
 
-To contribute or check the code yourself, you can fork or clone the repository as well.
+To obtain your own Postgres Database, sign-up with your GitHub account, then follow these steps:
+- Click **Create New Instance** to start a new database.
+- Provide a name (this is commonly the name of the project: eire-settlers).
+- Select the **Tiny Turtle (Free)** plan.
+- You can leave the **Tags** blank.
+- Select the **Region** and **Data Center** closest to you.
+- Once created, click on the new database name, where you can view the database URL and Password.
+
+### Deploy with Heroku
+This project uses [Heroku](https://www.heroku.com/) to host and deploy the website
+
+To deploy your website using Heroku, begin by signing up for a Heroku account. Then, proceed with the following steps:s
+1. Go on to [Heroku](https://www.heroku.com/) website and [log in](https://id.heroku.com/login) if you already have an account or [sign up](https://signup.heroku.com/) if you don't. 
+2. Click on the "New" button on the top right of the home page and select "Create new App" from the drop-down menu.
+3. In the "App name" field enter the name of your app. This name has to be unique. 
+    - Heroku displays a green tick if your app name is available.
+4. In the "Choose a region" field choose either the United States or Europe based on your location.
+5. Click the "Create app" button.
+6. Next page, top centre of the screen, select the "Settings" tab. 
+7. In the "Config Vars" section, click on the "Reveal config Vars" button.
+8. In this section you need to enter your environment variables. Usually stored in the env.py file locally. In my case, I have the folllwing variables: 
+    - SECRET_KEY - Django secret key.
+    - CLOUDINARY_URL - Cloudinary API key.
+    - DATABASE_URL - ElephantSQL database URL.
+9. Copy and paste these variables into the KEY field and their values into the VALUE field.
+10. Go back to the top of the screen and select the "Deploy" tab.
+11. In the "Deployment method" section select "GitHub".
+    1. In "Connect to GitHub" click on the "Search" button. Find the project repository in the list and click on the "Connect" button.
+    2. Scroll to the bottom of that page. Click on the "Deploy Branch" button to deploy.
+    3. You should also see an option to enable automatic deployment. If you enable this, every time you push to GitHub, Heroku will automatically deploy the app.
+12. You will see build log scrolling at the bottom of the screen after that. When successfully finished building the app, you should see the link to your app.
 
 ### Fork
-1. Go to the desired repository
-2. Click "Fork" in the upper right corner
-3. Select the owner, and set the repository name. A description can be added if desired
-4. Choose whether to copy the default branch, or all branches
-5. Click "Create Form"
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/tinobragaa/eire-settlers)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
 ### Clone
+You can clone the repository by following these steps:
 
-1. Go to the desired repository
-2. Click the "Code" button at the top of the files section of the page
-3. Select your desired method for cloning (HTTPS/SSH/GitHub CLI)
-4. Open Git Bash
-5. Change the current working directory to the location where you want the cloned directory
-6. Type "git clone", and then paste the URL you copied earlier. It will look like this, with your GitHub username instead of "YOUR-USERNAME": "$ git clone https://github.com/YOUR-USERNAME/DESIRED-REPOSITORY"
-7. Press Enter. Your local clone will be created.
+1. Go to the [GitHub Repository](https://github.com/tinobragaa/eire-settlers) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/tinobragaa/eire-settlers`
+7. Press Enter to create your local clone.
 
-### Heroku
-
-1. Create a user account with Heroku.
-2. Click New in the top-right corner of your Heroku Dashboard.
-3. Click on the dropdown menu and select create new.
-4. The app name is unique to all apps within Heroku so select one that is not currently in use.
-5. Select a region, EU or USA.
-6. Click Create App.
-7. In the app settings click Reveal Config vars, set the value of KEY to PORT, and the value to 8000 and click add.
-8. Click Add Buildpack.
-9. Choose Python first and click add.
-10. Choose Node.js second.
-11. The order is important, Python needs to be first, then Node.js second.
-12. Click on the Deploy tab, select connect to Github and search for your repository.
-13. Click on Enable automatic deploy or Deploy branch depending on your use case.
-
-# Credits
-
+## Credits
 A list of references and tutorials used for the site:
 
-* GitHub Repositories
-* Hello Django Project
-* I Think Therefore I Blog
-* Boutique Ado Project
+* The development process relied on The Code Institute's "Boutique Ado" and "I Think Therefore I Blog" walkthrough projects.
+* The developer leveraged their past projects, including [Mil's Kitchen](https://tinobragaa.github.io/mils-kitchen/) (GitHub repository [here](https://github.com/tinobragaa/mils-kitchen)), [codit Quiz - Your JavaScript Quiz](https://tinobragaa.github.io/codit-quiz/) (GitHub repository [here](https://github.com/tinobragaa/codit-quiz)), [Password Creator](https://password-creatorr.herokuapp.com/) (GitHub repository [here](https://github.com/tinobragaa/password-creator)), and [HefestusCave](https://eire-settlers-9b0e3e0c192c.herokuapp.com/) (GitHub repository [here](https://github.com/tinobragaa/eire-settlers)), as primary references for accessing code solutions and CSS, as well as for README documentation purposes.
 
-# Acknowledgements
-
+## Acknowledgements
 I would like to take this opportunity to acknowledge and thank the following people:
 
 - A big thank you to my therapist for helping me thrive.
 - A huge thank you to my husband for always being by my side.
-- An even bigger thank you to my puppy, Rio, who never leaves me alone.
+- An even bigger thank you to my puppy, Rio, even though he is not really good at coding, he is excellent at keeping me company.
