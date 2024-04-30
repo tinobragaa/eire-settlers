@@ -79,8 +79,78 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 ## Lighthouse Audit
 
-## Defensive Programming
+All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/). Testing was performed in private browsing mode and on the live website on Heroku.
+
+| Page | Image |
+| --- | --- |
+| Home Page | ![Lighthouse Screenshot]() |
+| All Articles Page | ![Lighthouse Screenshot]() |
+| My Articles Page | ![Lighthouse Screenshot]() |
+| Saved Articles Page | ![Lighthouse Screenshot]() |
+| Article Detail Page | ![Lighthouse Screenshot]() |
+| Create Article Page | ![Lighthouse Screenshot]() |
+| Edit Article Page | ![Lighthouse Screenshot]() |
+| Remove Article Page | ![Lighthouse Screenshot]() |
+| Profile Page | ![Lighthouse Screenshot]() |
+| Edit Profile Page | ![Lighthouse Screenshot]() |
+| Remove Profile Page | ![Lighthouse Screenshot]() |
+| Edit Comment Page | ![Lighthouse Screenshot]() |
+| Remove Comment Page | ![Lighthouse Screenshot]() |
+| Sign In Page | ![Lighthouse Screenshot]() |
+| Sign Out Page | ![Lighthouse Screenshot]() |
+| Sign Up Page | ![Lighthouse Screenshot]() |
+
+## Manual Testing
 
 ## User Story Testing
 
+The following are user stories I've implemented with screenshots accordingly. 
+
+| User Story | Screenshot |
+| --- | --- |
+| As a user, I would like to be able to sign up, so that I can network with other users in the Eire Settlers community. | ![screenshot](/docs/features/sign-up-page.jpg) |
+| As a user, I want to be able to log in and out so that I can protect my personal information, create new articles, and interact with other users through likes, comments, and saving articles. | ![screenshot](/docs/features/sign-in-page.jpg) |
+| As a user when I log in, I want to be able to access the latest articles so I am up to date with the user's discussions. | ![screenshot](/docs/features/logged-in-homepage.jpg) |
+| As a user, I need a profile where I can store info about me, my name, location, and nationality. | ![screenshot](/docs/features/profile-page.jpg) |
+| As a user, I would like to be able to edit my profile when I want to make changes to my details. | ![screenshot](/docs/features/edit-profile-page.jpg) |
+| As a user, I want to create an article so that I can share my thoughts or start discussions on topics of interest to me. | ![screenshot](/docs/features/create-article-page.jpg) |
+| As a user, I want to be able to edit articles that I have previously published so that I can update and improve the content as needed. | ![screenshot](/docs/features/edit-article-page.jpg) |
+| As a user, I want to be able to like articles posted by other users so that I can express appreciation or agreement with their contributions. | ![screenshot](/docs/features/endorse-article-button.jpg) |
+| As a user, I want to be able to save articles that I find interesting or want to revisit late so that I can easily access and reference them at a later time. | ![screenshot](/docs/features/saved-articles.jpg) |
+| As a user, I want to be able to create new comments, edit existing comments, and delete comments from articles so that I can engage with the content and express my thoughts effectively. | ![screenshot](/docs/features/manage-comments.jpg) |
+| As a user, I want to be able to report comments that I believe violate the site's community guidelines so that I can notify the administrators of inappropriate content for review and potential removal. | ![screenshot](/docs/features/report-comment.jpg) |
+| As a user, I would like the site to have a customized favicon so I can easily identify it when I have multiple tabs open. | ![screenshot](/docs/features/favicon-tab.jpg) |
+| As a user, I can view and use the web app on all screen sizes so that I can change my device and access the app. | ![screenshot](/docs/features/desktop-mobile-design.jpg) |
+| As a user, I would like a responsive navigation menu so that I can easily navigate from any device. | ![screenshot](/docs/features/desktop-mobile-navbar.jpg) |
+
+The following are user stories I wasn't able to implement and have labeled as Future Release in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
+
+<details>
+<summary>Future Release Issues</summary>
+<br>
+
+![screenshot](/docs/testing/future-release-issues.jpg)
+
+</details>
+
+| User Story | Issue |
+| --- | --- |
+| As a user, I want to be able to search for content and profiles so that I can easily find relevant information and connect with others. | [Search Functionality](https://github.com/tinobragaa/eire-settlers/issues/29) |
+| As a user, I want to be able to add tags to my content so that I can categorize it effectively and enhance its discoverability. | [Articles Tag](https://github.com/tinobragaa/eire-settlers/issues/30) |
+| As a user, I want to be able to add friends so that I can expand my social connections within the website's community. | [Add Friends Functionality](https://github.com/tinobragaa/eire-settlers/issues/28) |
+| As a user, I want to sign in with one of my social accounts so that I can sign in or sign up quickly and easily. | [Social Media Login](https://github.com/tinobragaa/eire-settlers/issues/20#issue-2124208831) |
+| As a User, I want to have the option to enable and use dark mode in the application so that I can reduce eye strain and enhance readability in low-light environments. | [Dark Mode Feature](https://github.com/tinobragaa/eire-settlers/issues/23) |
+
 ## Bugs
+
+`Bug`: CSS was not showing on deployed heroku app.
+<br>
+`Fix`: Fixed by setting DEBUG to False in settings.py and disabling collect static variable in Heroku.
+
+`Bug`: Multiple NoReverseMatch error with links on the website.
+<br>
+`Fix`: Fixed by passing argument to the appropriate page on the link.
+
+`Bug`: Default profile image not displaying.
+<br>
+`Fix`: Fixed by replacing link to default profile picture in profile models with 'placeholder' and adding an if statement to profile if the user's profile picture link is 'placeholder' the image will display the default picture and if not it will show the user's uploaded image.
