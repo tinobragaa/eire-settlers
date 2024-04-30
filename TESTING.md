@@ -83,22 +83,22 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 
 | Page | Image |
 | --- | --- |
-| Home Page | ![Lighthouse Screenshot]() |
-| All Articles Page | ![Lighthouse Screenshot]() |
-| My Articles Page | ![Lighthouse Screenshot]() |
-| Saved Articles Page | ![Lighthouse Screenshot]() |
-| Article Detail Page | ![Lighthouse Screenshot]() |
-| Create Article Page | ![Lighthouse Screenshot]() |
-| Edit Article Page | ![Lighthouse Screenshot]() |
-| Remove Article Page | ![Lighthouse Screenshot]() |
-| Profile Page | ![Lighthouse Screenshot]() |
-| Edit Profile Page | ![Lighthouse Screenshot]() |
-| Remove Profile Page | ![Lighthouse Screenshot]() |
-| Edit Comment Page | ![Lighthouse Screenshot]() |
-| Remove Comment Page | ![Lighthouse Screenshot]() |
-| Sign In Page | ![Lighthouse Screenshot]() |
-| Sign Out Page | ![Lighthouse Screenshot]() |
-| Sign Up Page | ![Lighthouse Screenshot]() |
+| Home Page | ![Lighthouse Screenshot](/docs/testing/homepage-lighthouse.jpg) |
+| All Articles Page | ![Lighthouse Screenshot](/docs/testing/all-articles-lighthouse.jpg) |
+| My Articles Page | ![Lighthouse Screenshot](/docs/testing/members-articles-lighthouse.jpg) |
+| Saved Articles Page | ![Lighthouse Screenshot](/docs/testing/saved-articles-lighthouse.jpg) |
+| Article Detail Page | ![Lighthouse Screenshot](/docs/testing/article-detail-lighthouse.jpg) |
+| Create Article Page | ![Lighthouse Screenshot](/docs/testing/create-article-lighthouse.jpg) |
+| Edit Article Page | ![Lighthouse Screenshot](/docs/testing/edit-article-lighthouse.jpg) |
+| Remove Article Page | ![Lighthouse Screenshot](/docs/testing/profile-lighthouse.jpg) |
+| Profile Page | ![Lighthouse Screenshot](/docs/testing/profile-lighthouse.jpg) |
+| Edit Profile Page | ![Lighthouse Screenshot](/docs/testing/edit-profile-lighthouse.jpg) |
+| Remove Profile Page | ![Lighthouse Screenshot](/docs/testing/remove-article-lighthouse.jpg) |
+| Edit Comment Page | ![Lighthouse Screenshot](/docs/testing/edit-comment-lighthouse.jpg) |
+| Remove Comment Page | ![Lighthouse Screenshot](/docs/testing/remove-comment-lighthouse.jpg) |
+| Sign In Page | ![Lighthouse Screenshot](/docs/testing/sign-in-page-lighthouse.jpg) |
+| Sign Out Page | ![Lighthouse Screenshot](/docs/testing/sign-out-page-lighthouse.jpg) |
+| Sign Up Page | ![Lighthouse Screenshot](/docs/testing/sign-up-page-lighthouse.jpg) |
 
 ## Manual Testing
 
@@ -123,7 +123,7 @@ The following are user stories I've implemented with screenshots accordingly.
 | As a user, I can view and use the web app on all screen sizes so that I can change my device and access the app. | ![screenshot](/docs/features/desktop-mobile-design.jpg) |
 | As a user, I would like a responsive navigation menu so that I can easily navigate from any device. | ![screenshot](/docs/features/desktop-mobile-navbar.jpg) |
 
-The following are user stories I wasn't able to implement and have labeled as Future Release in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
+The following are user stories I wasn't able to implement and have been set as Future Release on the [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
 
 <details>
 <summary>Future Release Issues</summary>
@@ -133,13 +133,13 @@ The following are user stories I wasn't able to implement and have labeled as Fu
 
 </details>
 
-| User Story | Issue |
-| --- | --- |
-| As a user, I want to be able to search for content and profiles so that I can easily find relevant information and connect with others. | [Search Functionality](https://github.com/tinobragaa/eire-settlers/issues/29) |
-| As a user, I want to be able to add tags to my content so that I can categorize it effectively and enhance its discoverability. | [Articles Tag](https://github.com/tinobragaa/eire-settlers/issues/30) |
-| As a user, I want to be able to add friends so that I can expand my social connections within the website's community. | [Add Friends Functionality](https://github.com/tinobragaa/eire-settlers/issues/28) |
-| As a user, I want to sign in with one of my social accounts so that I can sign in or sign up quickly and easily. | [Social Media Login](https://github.com/tinobragaa/eire-settlers/issues/20#issue-2124208831) |
-| As a User, I want to have the option to enable and use dark mode in the application so that I can reduce eye strain and enhance readability in low-light environments. | [Dark Mode Feature](https://github.com/tinobragaa/eire-settlers/issues/23) |
+| User Story | Status |Issue |
+| --- | --- | --- |
+| As a user, I want to be able to search for content and profiles so that I can easily find relevant information and connect with others. | Open | [Search Functionality](https://github.com/tinobragaa/eire-settlers/issues/29) |
+| As a user, I want to be able to add tags to my content so that I can categorize it effectively and enhance its discoverability. | Open | [Articles Tag](https://github.com/tinobragaa/eire-settlers/issues/30) |
+| As a user, I want to be able to add friends so that I can expand my social connections within the website's community. | Open | [Add Friends Functionality](https://github.com/tinobragaa/eire-settlers/issues/28) |
+| As a user, I want to sign in with one of my social accounts so that I can sign in or sign up quickly and easily. | Open | [Social Media Login](https://github.com/tinobragaa/eire-settlers/issues/20#issue-2124208831) |
+| As a User, I want to have the option to enable and use dark mode in the application so that I can reduce eye strain and enhance readability in low-light environments. | Open | [Dark Mode Feature](https://github.com/tinobragaa/eire-settlers/issues/23) |
 
 ## Bugs
 
