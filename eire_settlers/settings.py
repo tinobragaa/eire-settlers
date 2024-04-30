@@ -28,11 +28,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['eire-settlers-9b0e3e0c192c.herokuapp.com', 'localhost', '8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = ['eire-settlers-9b0e3e0c192c.herokuapp.com', '8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu110.gitpod.io',]
 
-CSRF_TRUSTED_ORIGINS=['https://8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu110.gitpod.io', 'https://eire-settlers-9b0e3e0c192c.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://eire-settlers-9b0e3e0c192c.herokuapp.com/', 'https://8000-tinobragaa-eiresettlers-dmy2iu9lqfn.ws-eu110.gitpod.io']
 
 # Application definition
 
@@ -124,16 +124,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
@@ -155,7 +155,7 @@ MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  # noqa
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

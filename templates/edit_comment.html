@@ -11,8 +11,6 @@
                 <form method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="{{ form.comment.id_for_label }}">{{ user.username }} wrote:</label>
-                        <br>
                         {{ form.body }}
                     </div>
                     <button type="submit" class="btn btn-outline-success me-2">Save</button>

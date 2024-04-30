@@ -14,9 +14,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in article.image_preview.url %}
                                 <img class="card-img-top"
-                                    src="https://i.imgur.com/Li7HO7j.jpg">
+                                    src="https://i.imgur.com/Li7HO7j.jpg" alt="Article placeholder image.">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ article.image_preview.url }}">
+                                <img class="card-img-top" src=" {{ article.image_preview.url }}" alt="Article image.">
                                 {% endif %}
                                 <a href="{% url 'article_detail' article.slug  %}" class="post-link">
                                     <h2 class="card-title">{{ article.title }}</h2>

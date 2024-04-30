@@ -9,14 +9,14 @@
                 <h1>Edit Profile</h1>
             </div>
             <div class="row-col-1 d-flex justify-content-center">
-                <a type="button" class="btn btn-outline-dark" href="{% url 'member_profile' %}">Return</a>
+                <a class="btn btn-outline-dark" href="{% url 'member_profile' %}">Return</a>
             </div>
             <div class="col-12">
                 <form method="POST" action="{% url 'update_profile' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         <div class="form-outline mt-3">
-                            <label class="col-sm-2 col-form-label text-nowrap" for="">{{ field.label }}</label>
+                            <label class="col-sm-2 col-form-label text-nowrap">{{ field.label }}</label>
                             {{field}}
                         </div>
                     {% endfor %}

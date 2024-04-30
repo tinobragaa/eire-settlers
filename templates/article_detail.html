@@ -20,9 +20,9 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in articles.image_preview.url %}
-                <img src="https://i.imgur.com/Li7HO7j.jpg" width="100%">
+                <img src="https://i.imgur.com/Li7HO7j.jpg" alt="Placeholder image." style="width: 100%;"/>
                 {% else %}
-                <img src=" {{ articles.image_preview.url }}" width="100%">
+                <img src=" {{ articles.image_preview.url }}" alt="Article image." style="width: 100%;"/>
                 {% endif %}
             </div>
         </div>
@@ -74,6 +74,7 @@
                         {% else %}
                         <i class="fa-regular fa-bookmark"></i>
                         {% endif %}
+                    </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
