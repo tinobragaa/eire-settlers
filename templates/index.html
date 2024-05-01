@@ -2,17 +2,25 @@
 {% load static %}
 {% block content %}
 {% if not user.is_authenticated %}
-<div class="main-banner d-flex justify-content-center align-items-center">
-    <div class="container">
+<div class="container big-text d-flex flex-column">
+    <div>
+        <p class="right-big-text">WELCOME TO YOUR</p>
+    </div>
+    <div>
+        <p class="left-big-text">COMMUNITY</p>
+    </div>
+</div>
+<div class="main-banner d-flex justify-content-center align-items-center mt-4 center-mobile">
+    <div class="container larger-screens">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <img src="{% static 'images/hero-image.webp' %}" alt="Banner Image" class="img-fluid">
             </div>
             <div class="col-lg-6">
-                <div class="text-center text-black">
-                    <h1>Welcome to Our Immigrant Community</h1>
-                    <p>Empowering immigrants with valuable resources and insights</p>
-                    <a href="{% url 'articles_list' %}" class="btn btn-one btn-primary btn-lg mt-4">Read Now</a>
+                <div class="text-black">
+                    <h2>A Place Where Immigrants Come Together</h2>
+                    <p>Join us today to start your journey with confidence.</p>
+                    <a href="{% url 'account_signup' %}" class="btn btn-one btn-primary btn-lg">Join Now</a>
                 </div>
             </div>
         </div>

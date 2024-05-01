@@ -98,12 +98,65 @@ footer {
 }
 
 .card-img-top {
-    max-width: 100%; /* Set maximum width */
-    max-height: 200px; /* Set maximum height */
-    object-fit: cover; /* Ensure image covers the entire container */
+    max-width: 100%; 
+    max-height: 200px; 
+    object-fit: cover; 
 }
 
 .card-body a {
     color: black;
     text-decoration: none;
 }
+
+.big-text {
+    position: absolute;
+    font-size: 6vw;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.big-text p {
+    margin-bottom: -1rem;
+}
+
+.right-big-text {
+    margin-right: 300px;
+}
+
+.left-big-text {
+    margin-left: 560px;
+}
+
+
+/* For screens less than 999px wide */
+@media screen and (max-width: 999px) {
+    .left-big-text, .right-big-text {
+        margin: 0;
+    }
+
+    .center-mobile {
+        text-align: center;
+    }
+
+    .main-banner {
+        height: 90vh;
+    }
+}
+
+/* For screens larger than 2400px wide */
+@media screen and (min-width: 2401px) {
+    .left-big-text, .right-big-text {
+        margin: 0;
+        font-size: 4vw;
+    }
+
+    .center-mobile {
+        text-align: center;
+    }
+
+    .larger-screens {
+        margin-top: 100px;
+    }
+}
+
