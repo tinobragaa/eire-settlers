@@ -124,19 +124,39 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 
 </details>
 
-## Features 
+## Features
 
-### Homepage
-- 
--
--
-<details>
-<summary>Homepage</summary>
-<br>
+### Existing Features
 
-![Homepage]()
+- **Landing Page**
 
-</details>
+    - This is the page a user lands on when arriving at the site for the first time or before they've logged in if they don't have an active session. It welcomes them to the site and gives them the option to either sign up for an account or log in to an existing account.
+
+    ![screenshot]()
+
+- **Sign Up Page**
+
+    - This is where the user can create an account for themselves by entering their e-mail address, desired username and password twice to confirm. If the user accidentally comes to this page instead of the login page they can get to the right page using the link in the card text.
+
+    ![screenshot]()
+
+### Future Features
+A few features that could make the website even better are listed here. These features have been logged as "Future Release" in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
+
+- **Dark Mode**
+  - Introducing a dark mode option can enhance user experience by reducing eye strain and making the website more visually appealing in low-light environments. Users can switch between light and dark modes based on their preference.
+
+- **Social Media Login**
+  - Enabling social media login functionality allows users to sign in to the platform using their existing social media accounts, such as Facebook, Twitter, or Google. This feature simplifies the registration and login process, saving users time and effort. Additionally, it enhances user convenience by eliminating the need to remember separate login credentials for the platform.
+
+- **Add Friend Functionality**
+  - Incorporating an "Add Friend" feature enables users to expand their social connections within the website's community. Users can send friend requests to others, fostering interaction and engagement. This feature enhances the social aspect of the platform and encourages networking among users.
+
+- **Search Functionality**
+  - Integrating a robust search functionality enhances user navigation and accessibility. Users can quickly locate specific content, such as articles, posts, or user profiles, by entering relevant keywords or filters. This feature improves user satisfaction by facilitating effortless content discovery and retrieval.
+
+- **Tag Functionality**
+  - Implementing a tag system allows users to categorize and organize content effectively. Users can assign tags to their posts, articles, or other contributions, enabling easy classification based on topics, themes, or interests. This feature enhances content organization, promotes discoverability, and facilitates targeted content consumption for users.
 
 ## Database Design
 I utilized [dbdiagram](https://dbdiagram.io/home) to create an entity relationship diagram, offering a clear visualization of the interconnections among my data structures. This streamlined the development process by offering a comprehensive visualization.
@@ -231,24 +251,6 @@ I broke down my Epics into individual stories before prioritizing and implementi
 - **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
-
-## Future Features
-A few features that could make the website even better are listed here. These features have been logged as "Future Release" in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
-
-- **Dark Mode**
-  - Introducing a dark mode option can enhance user experience by reducing eye strain and making the website more visually appealing in low-light environments. Users can switch between light and dark modes based on their preference.
-
-- **Social Media Login**
-  - Enabling social media login functionality allows users to sign in to the platform using their existing social media accounts, such as Facebook, Twitter, or Google. This feature simplifies the registration and login process, saving users time and effort. Additionally, it enhances user convenience by eliminating the need to remember separate login credentials for the platform.
-
-- **Add Friend Functionality**
-  - Incorporating an "Add Friend" feature enables users to expand their social connections within the website's community. Users can send friend requests to others, fostering interaction and engagement. This feature enhances the social aspect of the platform and encourages networking among users.
-
-- **Search Functionality**
-  - Integrating a robust search functionality enhances user navigation and accessibility. Users can quickly locate specific content, such as articles, posts, or user profiles, by entering relevant keywords or filters. This feature improves user satisfaction by facilitating effortless content discovery and retrieval.
-
-- **Tag Functionality**
-  - Implementing a tag system allows users to categorize and organize content effectively. Users can assign tags to their posts, articles, or other contributions, enabling easy classification based on topics, themes, or interests. This feature enhances content organization, promotes discoverability, and facilitates targeted content consumption for users.
 
 ## Technologies Used
 

@@ -90,10 +90,10 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | Article Detail Page | ![Lighthouse Screenshot](/docs/testing/article-detail-lighthouse.jpg) |
 | Create Article Page | ![Lighthouse Screenshot](/docs/testing/create-article-lighthouse.jpg) |
 | Edit Article Page | ![Lighthouse Screenshot](/docs/testing/edit-article-lighthouse.jpg) |
-| Remove Article Page | ![Lighthouse Screenshot](/docs/testing/profile-lighthouse.jpg) |
+| Remove Article Page | ![Lighthouse Screenshot](/docs/testing/remove-article-lighthouse.jpg) |
 | Profile Page | ![Lighthouse Screenshot](/docs/testing/profile-lighthouse.jpg) |
 | Edit Profile Page | ![Lighthouse Screenshot](/docs/testing/edit-profile-lighthouse.jpg) |
-| Remove Profile Page | ![Lighthouse Screenshot](/docs/testing/remove-article-lighthouse.jpg) |
+| Remove Profile Page | ![Lighthouse Screenshot](/docs/testing/remove-profile-lighthouse.jpg) |
 | Edit Comment Page | ![Lighthouse Screenshot](/docs/testing/edit-comment-lighthouse.jpg) |
 | Remove Comment Page | ![Lighthouse Screenshot](/docs/testing/remove-comment-lighthouse.jpg) |
 | Sign In Page | ![Lighthouse Screenshot](/docs/testing/sign-in-page-lighthouse.jpg) |
