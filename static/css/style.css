@@ -79,7 +79,6 @@ footer {
 .btn {
     border-radius: 100px;
     color: black;
-    margin-top: 5px;
 }
 
 .btn-one, .edit-btn {
@@ -128,6 +127,14 @@ footer {
     margin-left: 560px;
 }
 
+.text-teal {
+    color: #2a4aff !important;
+}
+
+.text-teal:hover {
+    border-bottom: 1px solid #2a4aff;
+}
+
 
 /* For screens less than 999px wide */
 @media screen and (max-width: 999px) {
@@ -159,4 +166,3 @@ footer {
         margin-top: 100px;
     }
 }
-

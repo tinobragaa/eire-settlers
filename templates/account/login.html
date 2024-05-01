@@ -1,15 +1,35 @@
 {% extends 'base.html' %}
 {% block title %}Login | Eire Settlers{% endblock title %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 {% block content %}
 
-<div style="margin-top:6%" class="container">
-    <h2>Log In</h2>
-    <form method="post" autocomplete="off">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button class="btn btn-success" type="submit">Log In</button>
-    </form>
-</div>
+<div class="container">
+    <div class="row h-100">
+      <div class="col col-lg-6 col-md-8 col-sm-12 m-auto p-3 pb-5">
+        <div class="card border-0">
+          <div class="card-body">
+            <h1 class="card-title logo-font text-center">{% trans "Log In" %}</h1>
+            <hr>
+            <h5 class="card-text text-center">{% blocktrans %}If you're new here, then please
+              <a class="text-teal" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+            </h5>
+            <div class="col-lg-10 p-2 m-auto">
+              <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <div class="text-center">
+                  <button class="btn btn-one btn-primary text-uppercase py-2" type="submit">Sign In</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock content %}
