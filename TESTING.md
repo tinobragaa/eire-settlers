@@ -1,3 +1,17 @@
+# Table of Contents
+- [Testing](#testing)
+  * [Validation](#validation)
+    + [HTML](#html)
+    + [CSS](#css)
+    + [JavaScript](#javascript)
+    + [Python](#python)
+  * [Browser Compatibility](#browser-compatibility)
+  * [Responsiveness Testing](#responsiveness)
+  * [Lighthouse Audit](#lighthouse-audit)
+  * [Manual Testing](#manual-testing)
+  * [User Story Testing](#user-story-testing)
+  * [Bugs](#bugs)
+
 # Testing
 
 Return back to the [README.md](README.md) file.
@@ -116,6 +130,84 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | Sign Up Page | ![Lighthouse Screenshot](/docs/testing/sign-up-page-lighthouse.jpg) |
 
 ## Manual Testing
+
+| Page | User | User Action | Expected Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| **Navigation Bar** | | | | |
+| | Guest/Member | Click on Logo | Redirection to home page | Pass |
+| | Guest/Member |  Click on "Articles" link | Redirection to all articles page | Pass |
+| | Guest/Member |  Click on "Register" link | Redirection to the sign up page | Pass |
+| | Guest/Member |  Click on "Login" link | Redirection to the sign in page | Pass |
+| | Member |  Click on profile icon | Opens a dropdown menu | Pass |
+| | Member |  Click on "My Profile" link | Redirection to the profile page | Pass |
+| | Member |  Click on "My Articles" link | Redirection to the user's articles | Pass |
+| | Member |  Click on "Saved Articles" link | Redirection to the user's saved articles | Pass |
+| | Member |  Click on "Sign Out" link | Redirection to the sign out page | Pass |
+| **Home Page** | | | | |
+| | Guest/Member | Click on "Join Now" button | Redirection to sign up page | Pass |
+| | Guest/Member | Click on one of the articles | Redirection to the article page | Pass |
+| | Member | Hero banner removed and article feed displayed | N/A | Pass |
+| **Sign Up** | | | | |
+| | Guest/Member | Enter valid email address | Field will only accept email address format | Pass |
+| | Guest/Member | Enter valid password (twice) | Field will only accept password format | Pass |
+| | Guest/Member | Click on "Sign Up" button | Redirects user to feed | Pass |
+| | Guest/Member | Click on "Sign In" link | Redirects user to sign in page | Pass |
+| **Sign In** | | | | |
+| | Guest/Member | Click on "Sign In" button | Redirects user to feed | Pass |
+| | Guest/Member | Click on "Sign Up" link | Redirects user to sign up page | Pass |
+| **Log Out** | | | | |
+| | Member | Click on "Sign Out" button | Redirects user to home page | Pass |
+| **Profile** | | | | |
+| | Member | Click on "Edit" button | User will be redirected to the edit profile page | Pass |
+| | Member | Click on "Delete" button | User will be redirected to the delete profile page | Pass |
+| **Delete Profile Page** | | | | |
+| | Member | Click on "Delete" button | Profile will be permanently deleted | Pass |
+| | Member | Click on "Return" button | User will be redirected to the profile page | Pass |
+| **Edit Profle Page** | | | | |
+| | Member | Fill in profile form and click on "Save" button | Profile will be edited and user redirected to the profile page | Pass |
+| | Member | Click on "Return" button | User will be redirected to the profile page | Pass |
+| **All Articles Feed** | | | | |
+| | Guest/Member | Click on a article | User will be redirected to the individual article page | Pass |
+| **Individual Post Page** | | | | |
+| | Member | If user is the author | "Edit" and "Remove" buttons displayed | Pass |
+| | Guest | If user isn't the author and a member | "Edit" and "Remove" buttons not displayed | Pass |
+| | Member - Author | Click on "Delete" button | User will be redirected to the delete article page | Pass |
+| | Guest/Member | Brute forcing the URL to delete another user's article | Error raised | Pass |
+| | Member - Author | Click on "Edit" button | User will be redirected to the edit article page | Pass |
+| | Guest/Member | Brute forcing the URL to edit another user's article | Error raised | Pass |
+| | Member | Click the endorse icon on the post | Endorse icon will fill and the like count will increase by 1 | Pass |
+| | Guest | Click the endorse icon on the post | Nothing happens | Pass |
+| | Member | Click the bookmark icon on the post | Bookmark icon will fill and the article will be added to the saved list | Pass |
+| | Guest | Click the bookmark icon on the post | Nothing happens | Pass |
+| **Delete Article Page** | | | | |
+| | Member - Author | Click on "Delete" button | Article will be permanently deleted | Pass |
+| | Member - Author | Click on "Cancel" button | User will be redirected to the article page | Pass |
+| **Edit Article Page** | | | | |
+| | Member - Author | Fill in article form and click on "Save" button | Article will be edited and user redirected to the article page | Pass |
+| | Member | Click on "Return" button | User will be redirected to the article page | Pass |
+| **Comments** | | | | |
+| | Guest/Member | N/A | Comments count displayed | Pass |
+| | Guest/Member | N/A | Comments displayed | Pass |
+| | Guest | Comments displayed | Add comment field hidden and message informing login in is required | Pass |
+| | Member | Click on "Post" button | Comment is posted and comment count increased by 1 | Pass | 
+| | Member | Click on "Post" button without a content| Error raised | Pass | 
+| | Member - Comment Author | Click on "Delete" button | User will be redirected to the edit comment page | Pass |
+| | Guest/Member | Brute forcing the URL to delete another user's comment | Error raised | Pass |
+| | Member - Comment Author | Click on "Edit" button | User will be redirected to the edit comment page | Pass |
+| | Guest/Member | Brute forcing the URL to edit another user's comment | Error raised | Pass |
+| | Member | Click on "report" button on another's user comment | Comment flagged to the admin | Pass |
+| **Delete Comment Page** | | | | |
+| | Member | Click on the "Delete" button | Comment will be permanently deleted | Pass | 
+| | Member | Click on the "Cancel" button | User will be redirected to the original comment | Pass | 
+| **Edit Comment Page** | | | | |
+| | Member | Fill in comment form and click on the "Save" button | Original comment will be edited | Pass | 
+| | Member | Click on the "Cancel" button | User will be redirected to the original comment | Pass | 
+| **"My Articles" Page** | | | | |
+| | Member | N/A | Articles created by the user displayed | Pass |
+| | Member | Click on a article | User will be redirected to the individual article page | Pass |
+| **"Saved Articles" Page** | | | | |
+| | Member | N/A | Articles saved by the user displayed | Pass | 
+| | Member | Click on a article | User will be redirected to the individual article page | Pass |
 
 ## User Story Testing
 
