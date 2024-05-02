@@ -25,7 +25,22 @@ The [HTML W3C Validator](https://validator.w3.org) was used to validate HTML fil
 | Remove Profile | W3C | ![screenshot](/docs/testing/remove-profile-html-validation.jpg) | Pass: No Errors |
 | Sign In | W3C | ![screenshot](/docs/testing/signin-html-validation.jpg) | Pass: No Errors |
 | Sign Out | W3C | ![screenshot](/docs/testing/signout-html-validation.jpg) | Pass: No Errors |
-| Sign Up | W3C | ![screenshot]() | Pass: No Errors |
+| Sign Up | W3C | ![screenshot](/docs/testing/signup-html-validation.jpg) | No errors were found, except for the one "Element ul not allowed as child of element small". Error originated from Django Allauth. Contacted Tutor Support and I was told a note should suffice. |
+
+<details>
+<summary>Tutor Support Feedback HTML Error</summary>
+<br>
+
+![Tutor Feedback](/docs/tutor-feedback.jpg)
+
+</details>
+<details>
+<summary>Sign Up HTML</summary>
+<br>
+
+![Sign Up HTML](/docs/signup-code.jpg)
+
+</details>
 
 ### CSS
 
@@ -154,3 +169,8 @@ The following are user stories I wasn't able to implement and have been set as F
 `Bug`: Default profile image not displaying.
 <br>
 `Fix`: Fixed by replacing link to default profile picture in profile models with 'placeholder' and adding an if statement to profile if the user's profile picture link is 'placeholder' the image will display the default picture and if not it will show the user's uploaded image.
+
+`Bug`: Article posts overlaying hamburguer menu on smaller screens.
+<br>
+`Fix`: Fixed by adding a z-index on the menu so it would be displayed on top of the articles.
+
