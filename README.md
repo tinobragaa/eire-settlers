@@ -176,15 +176,142 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 
 - **Landing Page**
 
-    - This is the page a user lands on when arriving at the site for the first time or before they've logged in if they don't have an active session. It welcomes them to the site and gives them the option to either sign up for an account or log in to an existing account.
+    - This is the page a user lands on when arriving at the site for the first time or before they've logged in if they don't have an active session. It welcomes them to the site and gives them the option to see the existent articles, sign up for an account or log in to an existing account.
 
-    ![screenshot]()
+    ![screenshot](/docs/features/landing-page-guest.jpg)
+    ![screenshot](/docs/features/landing-page-member.jpg)
 
 - **Sign Up Page**
 
-    - This is where the user can create an account for themselves by entering their e-mail address, desired username and password twice to confirm. If the user accidentally comes to this page instead of the login page they can get to the right page using the link in the card text.
+    - This is where the user can create an account for themselves by entering their desired username and password twice to confirm. If the user accidentally comes to this page instead of the login page they can get to the right page using the link in the card text.
 
     ![screenshot]()
+
+- **Sign In Page**
+
+    - This is where users with existing accounts can log in with either their username and password. They can choose to let their browser remember them if they plan on returning to the site on the same device to avoid having to log in again. There's a link to the sign up page too if the user accidentally navigated to this page instead of trying to create an account.
+
+    ![screenshot]()
+
+- **Sign Out Page**
+
+    - When the user wants to finish their session and logout, they can do so from the nav menu. When a user clicks the "Sign Out" button they're met with a page asking them to confirm they want to log out. They're redirected to the landing page if they click the confirmation button and a message pops up confirming that they've logged out.
+
+    ![screenshot](documentation/testing/sign-out-page.png)
+
+- **All Article Page**
+
+    - This is where users can see displayed the list of all available articles within EireSettlers. Each article is presented in a visually appealing manner, inviting users to explore further. With intuitive navigation controls, users can seamlessly sift through the library.
+
+    ![screenshot]()
+
+- **Navibation Bar**
+
+    - The nav menu contains everything the user will need to navigate the site. The site logo always appears on the site menu with the other items only showing for logged in users. From the nav menu, user's can go to website's article feed, their saved articles, their profile, view articles they've created and log out.
+
+    ![screenshot]()
+
+    ![screenshot]()
+
+- **Footer**
+
+    - The footer appears across the website and includes the logo where users can click to return to the website's feed.
+
+    ![screenshot]()
+
+- **Pagination**
+
+    - On the all article page and the homepage pagination is implemented so if more than 6 posts appear in the feed then buttons appear at the bottom to split the feed into individual pages with a maximum of 6 posts on a page. This is to increase the user experience and make the site content easier to digest.
+
+    ![screenshot]()
+
+- **Individual Article Page**
+
+    - Articles are found in the homepage for guests and on the article feed view for both guests/members. When viewing a article, users can endorse articles, bookmark it, see when the article was created, see the author's name and edit/delete the article if they're the original author. Displays the count of endorsements and the bookmark icon. Under the article the users can see a list of comments on the post and a form to add their own comment to the post if they're logged in.
+
+    ![screenshot]()
+
+    ![screenshot]()
+
+    ![screenshot]()
+
+    ![screenshot]()
+
+- **Delete Article**
+
+    - Articles can be deleted by the post author and the admin by clicking on the delete icon. When deleting a post, the user is brought to a confirmation page to avoid posts being deleted accidentally. There's a button to bring them back to the post if the user changes their mind about deleting their post.
+
+    ![screenshot]()
+
+- **Edit Article**
+
+    - Articles can be egit by the post author and the admin by clicking on the edit button. When editing a article, the user is brought to a confirmation page to avoid posts being deleted accidentally. There's a button to bring them back to the post if the user changes their mind about deleting their post.
+
+    ![screenshot]()
+
+- **Comments**
+
+    - Articles comments are viewed under a article. Comments can be deleted and edit by the comment author or the admin.
+
+    ![screenshot]()
+
+- **Delete Comment**
+
+    - Comments can be deleted by the comment author and the admin. Clicking the delete button users are brought to a confirmation page to avoid comments being deleted accidentally. There's a button to bring them back to the post they commented on if the user changes their mind about deleting the comment.
+
+    ![screenshot]()
+
+- **Edit Comment**
+
+    - Comments can be edited by the comment author and the admin. Clicking the edit button brings them to a page where they can see their comment and make changes before hitting a button to save it. There's also a button to bring them back to the post where the comment was made if they hit the edit button by mistake.
+
+    ![screenshot]()
+
+- **Report Comment**
+
+    - Comments can be reported by members that are not the comment's author. Clicking the report it displays a message stating that comment was reported which is then flagged to the admin.
+
+    ![screenshot]()
+
+- **Profile**
+
+    - The profile contains a card with the user's information including profile picture, display name, username, bio, nationality and country. When user is viewing their profile they'll have an button to edit and to delete their profile. 
+
+    ![screenshot]()
+
+- **Delete Profile**
+
+    - This is where the user can delete their profile. There's a button to bring them back to their profile if they decide not to delete their profile.
+
+    ![screenshot]()
+
+- **Edit Profile**
+
+    - This is where the user can edit their profile details including profile picture, display name, username, bio, nationality and country. There's a button to bring them back to their profile if they decide not to make any edits.
+
+    ![screenshot]()
+
+- **Saved Articles Page**
+
+    - On the "My Saved Articles" Page, members find a collection of their saved articles. Each saved article is neatly organized, making it simple for users to revisit and engage with the content that resonates with them.
+
+    ![screenshot]()
+
+- **My Articles Page**
+
+    - On the "My Articles" Page, members find a collection of the articles created by them. This page serves as a place for members to easily access their creations. 
+
+    ![screenshot]()
+
+- **Error Pages**
+
+    - If a user ends up on a page that either doesn't exist or that they shouldn't be on (regular user using admin panel link or trying to delete other user's post through a link) then they'll be shown an error page with a button to bring them back to their feed.
+
+    ![screenshot]()
+
+    ![screenshot]()
+
+    ![screenshot](v)
 
 ### Future Features
 A few features that could make the website even better are listed here. These features have been logged as "Future Release" in my [Kanban Board](https://github.com/users/tinobragaa/projects/3/views/1).
