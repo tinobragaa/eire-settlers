@@ -1,4 +1,5 @@
 # Table of Contents
+
 - [Testing](#testing)
   * [Validation](#validation)
     + [HTML](#html)
@@ -12,9 +13,9 @@
   * [User Story Testing](#user-story-testing)
   * [Bugs](#bugs)
 
-# Testing
+**Return back to the [README.md](README.md) file.**
 
-Return back to the [README.md](README.md) file.
+# Testing
 
 During the evolution of this project, I've conducted a multitude of tests to verify the functionality of the site. Within this section, you'll discover comprehensive documentation detailing every test performed across the site.
 
@@ -146,7 +147,7 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | **Home Page** | | | | |
 | | Guest/Member | Click on "Join Now" button | Redirection to sign up page | Pass |
 | | Guest/Member | Click on one of the articles | Redirection to the article page | Pass |
-| | Member | Hero banner removed and article feed displayed | N/A | Pass |
+| | Member | Be on the home page | Hero banner removed and article feed displayed | Pass |
 | **Sign Up** | | | | |
 | | Guest/Member | Enter valid email address | Field will only accept email address format | Pass |
 | | Guest/Member | Enter valid password (twice) | Field will only accept password format | Pass |
@@ -162,10 +163,10 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | | Member | Click on "Delete" button | User will be redirected to the delete profile page | Pass |
 | **Delete Profile Page** | | | | |
 | | Member | Click on "Delete" button | Profile will be permanently deleted | Pass |
-| | Member | Click on "Return" button | User will be redirected to the profile page | Pass |
+| | Member | Click on "Cancel" button | User will be redirected to the profile page | Pass |
 | **Edit Profle Page** | | | | |
 | | Member | Fill in profile form and click on "Save" button | Profile will be edited and user redirected to the profile page | Pass |
-| | Member | Click on "Return" button | User will be redirected to the profile page | Pass |
+| | Member | Click on "Cancel" button | User will be redirected to the profile page | Pass |
 | **All Articles Feed** | | | | |
 | | Guest/Member | Click on a article | User will be redirected to the individual article page | Pass |
 | **Individual Post Page** | | | | |
@@ -184,10 +185,10 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | | Member - Author | Click on "Cancel" button | User will be redirected to the article page | Pass |
 | **Edit Article Page** | | | | |
 | | Member - Author | Fill in article form and click on "Save" button | Article will be edited and user redirected to the article page | Pass |
-| | Member | Click on "Return" button | User will be redirected to the article page | Pass |
+| | Member | Click on "Cancel" button | User will be redirected to the article page | Pass |
 | **Comments** | | | | |
-| | Guest/Member | N/A | Comments count displayed | Pass |
-| | Guest/Member | N/A | Comments displayed | Pass |
+| | Guest/Member | Be on a individual article page | Comments count displayed | Pass |
+| | Guest/Member | Be on a individual article page | Comments displayed | Pass |
 | | Guest | Comments displayed | Add comment field hidden and message informing login in is required | Pass |
 | | Member | Click on "Post" button | Comment is posted and comment count increased by 1 | Pass | 
 | | Member | Click on "Post" button without a content| Error raised | Pass | 
@@ -203,10 +204,10 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | | Member | Fill in comment form and click on the "Save" button | Original comment will be edited | Pass | 
 | | Member | Click on the "Cancel" button | User will be redirected to the original comment | Pass | 
 | **"My Articles" Page** | | | | |
-| | Member | N/A | Articles created by the user displayed | Pass |
+| | Member | Be on the "My Articles" page | Articles created by the user displayed | Pass |
 | | Member | Click on a article | User will be redirected to the individual article page | Pass |
 | **"Saved Articles" Page** | | | | |
-| | Member | N/A | Articles saved by the user displayed | Pass | 
+| | Member | Be on the "Saved" Articles page | Articles saved by the user displayed | Pass | 
 | | Member | Click on a article | User will be redirected to the individual article page | Pass |
 
 ## User Story Testing
@@ -265,4 +266,3 @@ The following are user stories I wasn't able to implement and have been set as F
 `Bug`: Article posts overlaying hamburguer menu on smaller screens.
 <br>
 `Fix`: Fixed by adding a z-index on the menu so it would be displayed on top of the articles.
-

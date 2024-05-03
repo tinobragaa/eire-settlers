@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import logout
@@ -321,36 +321,39 @@ def delete_profile(request):
 @login_required(login_url='/accounts/login/')
 def edit_comment(request, comment_id):
     """
-    View that allow members to edit a comment.
+    View that allows members to edit their comments.
     """
     comment = get_object_or_404(Comment, id=comment_id)
 
-    if request.method == 'POST':
-        form = CommentForm(request.POST, request.FILES, instance=comment)
-        if form.is_valid():
-            form.instance.user = request.user
-            form.save()
-            messages.success(request, 'The comment was edited successfully!')
-            return HttpResponseRedirect(reverse(
-                'article_detail', args=[comment.article.slug]))
+    if request.user == comment.member or request.user.is_staff:
+        if request.method == 'POST':
+            form = CommentForm(request.POST, request.FILES, instance=comment)
+            if form.is_valid():
+                form.instance.user = request.user
+                form.save()
+                messages.success(request, 'The comment was edited successfully!')
+                return HttpResponseRedirect(reverse('article_detail', args=[comment.article.slug]))
+        else:
+            form = CommentForm(instance=comment)
+
+        context = {'form': form}
+        return render(request, "edit_comment.html", context)
     else:
-        form = CommentForm(instance=comment)
-
-    context = {'form': form}
-    return render(request, "edit_comment.html", context)
-
+        return HttpResponseNotFound('Permission Denied')
 
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, comment_id):
     """
-    View that allow members to delete their comments.
+    View that allows members to delete their comments.
     """
     if request.method == "POST":
         comment = get_object_or_404(Comment, id=comment_id)
-        comment.delete()
-        messages.success(request, 'The comment was deleted successfully!')
-        return HttpResponseRedirect(reverse(
-            'article_detail', args=[comment.article.slug]))
+        if request.user == comment.member or request.user.is_staff:
+            comment.delete()
+            messages.success(request, 'The comment was deleted successfully!')
+            return HttpResponseRedirect(reverse('article_detail', args=[comment.article.slug]))
+        else:
+            return HttpResponseNotFound('Permission Denied')
 
     return render(request, "delete_comment.html")
 
