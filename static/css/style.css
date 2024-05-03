@@ -35,6 +35,10 @@ body {
     height: 4rem;
 }
 
+.ml-10px {
+    margin-left: 10px;
+}
+
 .nav-bg {
     background-color: #9ca593;
 }

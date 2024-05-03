@@ -2,22 +2,22 @@
 {% block title %} Delete Profile | Eire Settlers {% endblock %}
 {% block content %}
 
-{% if user.username == user_info.username %}
-<p>Delete your profile?</p>
-{% endif %}
-<div class="container-main-content p-4">
-    <form method="POST"  >
-        {% csrf_token %}
-        <h1>Delete Account</h1>
-        <p>Are you sure you want to permanently delete your account?</p>
-        <p>All your current data will be permanently deleted along with your account.</p>
-        <p>Are you sure you want to permanently delete {{ user.username }}?</p>
-        <button type="submit" class="btn btn-outline-danger mt-0 text-nowrap" value="">
-            <i class="fa-solid fa-trash-can"></i> 
-             Delete
-        </button>
-        <a class="btn btn-outline-dark" href="{% url 'member_profile' %}">Cancel</a>
-    </form>
+<div class="col-12 d-flex flex-wrap justify-content-center">
+    <div class="card auth-card m-4">
+        <div class="card-body">
+            <h1 class="text-center">Delete Account</h1>
+            <hr>
+            <p>All your current data will be permanently deleted along with your account.</p>
+            <p>Are you sure you want to permanently delete your account?</p>
+            <div class="row d-flex flex-nowrap">
+                <form class="d-flex justify-content-center" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger" value="">Delete</button>
+                    <a class="btn ml-10px btn-outline-dark" href="javascript:history.go(-1)">Cancel</a>
+                </form>
+            </div> 
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

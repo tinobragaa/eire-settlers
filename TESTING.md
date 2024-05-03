@@ -181,11 +181,11 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | | Member | Click the bookmark icon on the article | Bookmark icon will fill and the article will be added to the saved list | Pass |
 | | Guest | Click the bookmark icon on the article | Nothing happens | Pass |
 | **Delete Article Page** | | | | |
-| | Member - Author | Click on "Delete" button | Article will be permanently deleted | Pass |
-| | Member - Author | Click on "Cancel" button | User will be redirected to the article page | Pass |
+| | Admin/Member - Author | Click on "Delete" button | Article will be permanently deleted | Pass |
+| | Admin/Member - Author | Click on "Cancel" button | User will be redirected to the article page | Pass |
 | **Edit Article Page** | | | | |
-| | Member - Author | Fill in article form and click on "Save" button | Article will be edited and user redirected to the article page | Pass |
-| | Member | Click on "Cancel" button | User will be redirected to the article page | Pass |
+| | Admin/Member - Author | Fill in article form and click on "Save" button | Article will be edited and user redirected to the article page | Pass |
+| | Admin/Member | Click on "Cancel" button | User will be redirected to the article page | Pass |
 | **Comments** | | | | |
 | | Guest/Member | Be on a individual article page | Comments count displayed | Pass |
 | | Guest/Member | Be on a individual article page | Comments displayed | Pass |
@@ -198,11 +198,11 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | | Guest/Member | Brute forcing the URL to edit another user's comment | Error raised | Pass |
 | | Member | Click on "report" button on another's user comment | Comment flagged to the admin | Pass |
 | **Delete Comment Page** | | | | |
-| | Member | Click on the "Delete" button | Comment will be permanently deleted | Pass | 
-| | Member | Click on the "Cancel" button | User will be redirected to the original comment | Pass | 
+| | Admin/Member | Click on the "Delete" button | Comment will be permanently deleted | Pass | 
+| | Admin/Member | Click on the "Cancel" button | User will be redirected to the original comment | Pass | 
 | **Edit Comment Page** | | | | |
-| | Member | Fill in comment form and click on the "Save" button | Original comment will be edited | Pass | 
-| | Member | Click on the "Cancel" button | User will be redirected to the original comment | Pass | 
+| | Admin/Member | Fill in comment form and click on the "Save" button | Original comment will be edited | Pass | 
+| | Admin/Member | Click on the "Cancel" button | User will be redirected to the original comment | Pass | 
 | **"My Articles" Page** | | | | |
 | | Member | Be on the "My Articles" page | Articles created by the user displayed | Pass |
 | | Member | Click on a article | User will be redirected to the individual article page | Pass |

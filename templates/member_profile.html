@@ -2,45 +2,51 @@
 {% block title %} {{ user.username }} | Eire Settlers {% endblock %}
 {% block content %}
 
-<div class="card big-card mt-3">
-    <div class="card-body">
-        <div class="d-flex flex-column align-items-center text-center">
-            <img src="{{ user.profile.user_image_url }}" alt="Profile image" class="card-img-top img-thumbnail img-small" id="profile-image">
-            <div class="mt-3">
-                <p class="yellow mb-2"><i class="fa-regular fa-circle-user"></i> {{ user.username }}</p>
-                {% if user.is_authenticated and user == profile.user %}
-                    {% if profile.first_name or profile.last_name %}
-                        <h3>{{ user.profile.first_name }} {{ user.profile.last_name }}</h3>
-                    {% elif profile.pronouns %}
-                        <p class="m-1">{{ user.profile.pronouns }}</p>
-                    {% endif %}
-                    <div class="row d-grid gap-2 d-flex justify-content-center flex-nowrap">
-                        <a role="button" class="btn btn-sm btn-outline-dark col-5 me-1 me-lg-3 text-nowrap" href="{% url 'update_profile' %}"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
-                        <a role="button" class="btn btn-sm btn-outline-danger col-6  text-nowrap" href="{% url 'delete_profile' %}"><i class="fa-solid fa-trash-can"></i> Delete</a>
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-lg-16">
+            <div class="card card mt-5">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <img src="{{ user.profile.user_image_url }}" alt="Profile image" class="card-img-top img-thumbnail img-small" id="profile-image">
+                        <div class="mt-3">
+                            <p class="yellow mb-2"><i class="fa-regular fa-circle-user"></i> {{ user.username }}</p>
+                            {% if user.is_authenticated and user == profile.user %}
+                                {% if profile.first_name or profile.last_name %}
+                                    <h3>{{ user.profile.first_name }} {{ user.profile.last_name }}</h3>
+                                {% elif profile.pronouns %}
+                                    <p class="m-1">{{ user.profile.pronouns }}</p>
+                                {% endif %}
+                                <div class="row d-grid gap-2 d-flex justify-content-center flex-nowrap">
+                                    <a role="button" class="btn btn-sm btn-outline-dark col-5 me-1 me-lg-3 text-nowrap" href="{% url 'update_profile' %}"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                                    <a role="button" class="btn btn-sm btn-outline-danger col-6  text-nowrap" href="{% url 'delete_profile' %}"><i class="fa-solid fa-trash-can"></i> Delete</a>
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
-                {% endif %}
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="card mt-3">
-    <div class="card-body">
-        <div class="row">
-            <div>Nationality: {{ user.profile.nationality }}</div>
-        </div>
-        <div class="row">
-            <div>Location: {{ user.profile.location }}</div>
-        </div>
-        <div class="row">
-            <div>Joined on {{ user.profile.created|date:"d/M/Y" }}</div>
-        </div>
-    </div>
-</div>
-<div class="card mt-3">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-2 text-nowrap mb-2"><i class="fa-regular fa-address-card yellow"></i>About:</div>
-            <div class="card card-text">{{ user.profile.about |linebreaks }}</div>
+            <div class="card mt-2">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div>Nationality: <strong>{{ user.profile.nationality }}</strong></div>
+                    </div>
+                    <div class="row">
+                        <div>Location: <strong>{{ user.profile.location }}</strong></div>
+                    </div>
+                    <div class="row">
+                        <div>Joined on <strong>{{ user.profile.created|date:"d/M/Y" }}</strong></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2 text-nowrap mb-2"><i class="fa-regular fa-address-card yellow"></i>About:</div>
+                        <div class="card card-text">{{ user.profile.about |linebreaks }}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
