@@ -7,6 +7,48 @@ Eire Settlers is a dynamic full-stack Django project designed to cultivate a vib
 
 [Live Website](https://eire-settlers-9b0e3e0c192c.herokuapp.com/)
 
+## Table of Contents
+
+- [Eire Settlers](#eire-settlers)
+  * [User Stories](#user-stories)
+    + [Project Setup and Planning](#project-setup-and-planning)
+    + [User Authentication and Profile Management](#user-authentication-and-profile-management)
+    + [Content Creation and Interaction](#content-creation-and-interaction)
+    + [User Interface and Experience](#user-interface-and-experience)
+    + [Accessibility and Responsiveness](#accessibility-and-responsiveness)
+  * [Design](#design)
+    + [Typography](#typography)
+    + [Colour Scheme](#colour-scheme)
+    + [Imagery](#imagery)
+  * [Wireframes](#wireframes)
+    + [Desktop](#desktop)
+    + [Mobile](#mobile)
+  * [Features](#features)
+    + [Existing Features](#existing-features)
+    + [Future Features](#future-features)
+  * [Database Design](#database-design)
+    + [UserAllAuth Model](#userallauth-model)
+    + [User Model](#user-model)
+    + [Article Model](#article-model)
+    + [Comment Model](#comment-model)
+    + [Tag Model](#tag-model)
+  * [Agile Development](#agile-development)
+    + [GitHub Projects](#github-projects)
+    + [GitHub Issues](#github-issues)
+    + [MoSCoW Prioritization](#moscow-prioritization)
+  * [Technologies Used](#technologies-used)
+    + [Languages and Frameworks](#languages-and-frameworks)
+    + [Resources and Tools](#resources-and-tools)
+    + [Django and Python Packages](#django-and-python-packages)
+  * [Testing](#testing)
+  * [Deployment](#deployment)
+    + [ElephantSQL Database](#elephantsql-database)
+    + [Deploy with Heroku](#deploy-with-heroku)
+    + [Fork](#fork)
+    + [Clone](#clone)
+  * [Credits](#credits)
+  * [Acknowledgements](#acknowledgements)
+
 ## User Stories
 
 For the project's advancement, I generated 29 user stories that detailed the essential tasks for achieving a well-constructed website. Following an agile development approach, I then categorized these user stories into 5 distinct Epics on the Kanban board to manage the project's progression effectively.
@@ -76,6 +118,8 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 
 ## Wireframes
 
+### Desktop
+
 <details>
 <summary>Landing Page</summary>
 <br>
@@ -123,6 +167,8 @@ In imagery, I've chosed a captivating centerpiece to resonate with the website's
 ![Articles Details](/docs/wireframes/article-detail.jpg)
 
 </details>
+
+### Mobile
 
 ## Features
 
