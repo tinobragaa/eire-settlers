@@ -135,7 +135,7 @@ class EditArticle(View):
             article = get_object_or_404(
                 Articles, slug=self.kwargs["slug"])
 
-            if (self.request.user == article.member):
+            if (self.request.user == article.member or request.user.is_staff):
 
                 form = ArticleForm(instance=article)
 
@@ -149,7 +149,7 @@ class EditArticle(View):
     def post(self, request, *arg, **kwargs):
         article = get_object_or_404(
             Articles, slug=self.kwargs["slug"])
-        if (self.request.user == article.member):
+        if (self.request.user == article.member or request.user.is_staff):
             form = ArticleForm(request.POST, instance=article)
             if form.is_valid():
                 if 'image_preview' in request.FILES:
@@ -172,7 +172,7 @@ class DeleteArticle(View):
 
         context = {"article": article}
 
-        if (self.request.user == article.member):
+        if (self.request.user == article.member or request.user.is_staff):
             return render(request, "delete_article.html", context)
 
         else:
@@ -182,7 +182,7 @@ class DeleteArticle(View):
         article = get_object_or_404(
             Articles, slug=self.kwargs["slug"])
 
-        if (self.request.user == article.member):
+        if (self.request.user == article.member or request.user.is_staff):
             article.delete()
             return HttpResponseRedirect(reverse('home'))
 
@@ -310,10 +310,11 @@ def delete_profile(request):
     """
     if request.method == "POST":
         user = request.user
-        user.delete()
-        logout(request)
-        messages.warning(request, 'Profile was deleted!')
-        return redirect('/')
+        if user.is_staff or user == request.user:
+            user.delete()
+            logout(request)
+            messages.warning(request, 'Profile was deleted!')
+            return redirect('/')
 
     return render(request, "delete_profile.html")
 
@@ -331,8 +332,13 @@ def edit_comment(request, comment_id):
             if form.is_valid():
                 form.instance.user = request.user
                 form.save()
-                messages.success(request, 'The comment was edited successfully!')
-                return HttpResponseRedirect(reverse('article_detail', args=[comment.article.slug]))
+                messages.success(
+                    request,
+                    'The comment was edited successfully!'
+                )
+                return HttpResponseRedirect(reverse(
+                    'article_detail', args=[comment.article.slug]
+                ))
         else:
             form = CommentForm(instance=comment)
 
@@ -340,6 +346,7 @@ def edit_comment(request, comment_id):
         return render(request, "edit_comment.html", context)
     else:
         return HttpResponseNotFound('Permission Denied')
+
 
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, comment_id):
@@ -351,7 +358,9 @@ def delete_comment(request, comment_id):
         if request.user == comment.member or request.user.is_staff:
             comment.delete()
             messages.success(request, 'The comment was deleted successfully!')
-            return HttpResponseRedirect(reverse('article_detail', args=[comment.article.slug]))
+            return HttpResponseRedirect(reverse(
+                'article_detail', args=[comment.article.slug]
+            ))
         else:
             return HttpResponseNotFound('Permission Denied')
 

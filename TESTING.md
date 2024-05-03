@@ -169,17 +169,17 @@ All pages were tested with [Google Chrome Lighthouse](https://developer.chrome.c
 | | Member | Click on "Cancel" button | User will be redirected to the profile page | Pass |
 | **All Articles Feed** | | | | |
 | | Guest/Member | Click on a article | User will be redirected to the individual article page | Pass |
-| **Individual Post Page** | | | | |
+| **Individual Article Page** | | | | |
 | | Member | If user is the author | "Edit" and "Remove" buttons displayed | Pass |
 | | Guest | If user isn't the author and a member | "Edit" and "Remove" buttons not displayed | Pass |
 | | Member - Author | Click on "Delete" button | User will be redirected to the delete article page | Pass |
 | | Guest/Member | Brute forcing the URL to delete another user's article | Error raised | Pass |
 | | Member - Author | Click on "Edit" button | User will be redirected to the edit article page | Pass |
 | | Guest/Member | Brute forcing the URL to edit another user's article | Error raised | Pass |
-| | Member | Click the endorse icon on the post | Endorse icon will fill and the like count will increase by 1 | Pass |
-| | Guest | Click the endorse icon on the post | Nothing happens | Pass |
-| | Member | Click the bookmark icon on the post | Bookmark icon will fill and the article will be added to the saved list | Pass |
-| | Guest | Click the bookmark icon on the post | Nothing happens | Pass |
+| | Member | Click the endorse icon on the article | Endorse icon will fill and the like count will increase by 1 | Pass |
+| | Guest | Click the endorse icon on the article | Nothing happens | Pass |
+| | Member | Click the bookmark icon on the article | Bookmark icon will fill and the article will be added to the saved list | Pass |
+| | Guest | Click the bookmark icon on the article | Nothing happens | Pass |
 | **Delete Article Page** | | | | |
 | | Member - Author | Click on "Delete" button | Article will be permanently deleted | Pass |
 | | Member - Author | Click on "Cancel" button | User will be redirected to the article page | Pass |
@@ -263,6 +263,6 @@ The following are user stories I wasn't able to implement and have been set as F
 <br>
 `Fix`: Fixed by replacing link to default profile picture in profile models with 'placeholder' and adding an if statement to profile if the user's profile picture link is 'placeholder' the image will display the default picture and if not it will show the user's uploaded image.
 
-`Bug`: Article posts overlaying hamburguer menu on smaller screens.
+`Bug`: Article containers were overlaying hamburguer menu on smaller screens devices.
 <br>
 `Fix`: Fixed by adding a z-index on the menu so it would be displayed on top of the articles.

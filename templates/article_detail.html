@@ -9,7 +9,7 @@
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ articles.title }}</h1>
                 <p class="post-subtitle">{{ articles.member }} | {{ articles.created_on }}</p>
-                {% if user.is_authenticated and request.user == articles.member %}
+                {% if user.is_authenticated and request.user == articles.member or request.user.is_staff %}
                     <div class="col-12 p-0 d-flex">
                         <a class="btn btn-xs btn-outline-danger mb-1 text-nowrap" href="{% url 'delete_article' slug=articles.slug %}">Delete</a>
                     </div>
@@ -99,7 +99,7 @@
                         </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
-                    {% if request.user == comment.member %}
+                    {% if request.user == comment.member or request.user.is_staff %}
                     <div class="col-12 p-0 d-flex">
                         <a class="btn btn-xs btn-outline-danger mb-1 text-nowrap" href="{% url 'delete_comment' comment.id %}">Delete</a>
                     </div>
